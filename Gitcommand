@@ -1,5 +1,9 @@
 // Commande git //
 
+// Ne pas oublier la mise à jour avant d'ajouter
+
+git pull
+
 // Connaitre sa branche actuelle
 
 git branch
@@ -7,10 +11,6 @@ git branch
 // Changer de branche
 
 git switch NomDeLaBranche
-
-// Ne pas oublier la mise à jour avant d'ajouter
-
-git pull
 
 // Pour Envoyer les fichiers
 
