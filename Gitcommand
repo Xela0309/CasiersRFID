@@ -1,8 +1,14 @@
-// Commande git
+// Commande git //
 
+// Connaitre sa branche actuelle
 
+git branch
 
-// Ne pas oublier la mise à jour 
+// Changer de branche
+
+git switch NomDeLaBranche
+
+// Ne pas oublier la mise à jour avant d'ajouter
 
 git pull
 
@@ -14,3 +20,4 @@ git commit FichierAChoisir -m "Message(Ne pas oublier les doubles quotes)"
 
 git push
 
+// Si vous avez un probleme appellez moi (fetch par exemple)
