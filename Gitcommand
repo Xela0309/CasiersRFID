@@ -1,0 +1,16 @@
+// Commande git
+
+
+
+// Ne pas oublier la mise à jour 
+
+git pull
+
+// Pour Envoyer les fichiers
+
+git add FichierAChoisir
+
+git commit FichierAChoisir -m "Message(Ne pas oublier les doubles quotes)"
+
+git push
+
