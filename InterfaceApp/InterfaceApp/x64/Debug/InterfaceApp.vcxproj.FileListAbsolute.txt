@@ -1,0 +1,2 @@
+C:\Users\picarda\Desktop\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.AssemblyReference.cache
+C:\Users\picarda\Desktop\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.SuggestedBindingRedirects.cache
