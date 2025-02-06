@@ -1,2 +1,6 @@
 C:\Users\picarda\Desktop\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.AssemblyReference.cache
 C:\Users\picarda\Desktop\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.AssemblyReference.cache
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.MyForm.resources
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\x64\Debug\InterfaceApp.vcxproj.GenerateResource.cache
