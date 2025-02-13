@@ -1,0 +1,9 @@
+﻿  Validation des sources
+  Copie des sources à distance vers '10.187.52.122'
+  Validation de l'architecture
+  Validation de l'architecture
+  Démarrage de la build distante
+  Compilation des sources :
+  requete.cpp
+  Liaison des objets
+  lecteurBadge.vcxproj -> C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\bin\ARM64\Release\lecteurBadge.out

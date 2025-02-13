@@ -1,0 +1,19 @@
+﻿  Validation des sources
+  Copie des sources à distance vers '10.187.52.122'
+  Validation de l'architecture
+  Validation de l'architecture
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Application Type\Linux\1.0\Linux.targets(204,5): warning : L'architecture de projet actuelle 'x86' est incompatible avec l'architecture du système distant 'ARM64' ('aarch64'). Remplacez l'architecture de projet par 'ARM64' dans le Gestionnaire de configuration. Si vous effectuez une compilation croisée, vous pouvez ignorer cet avertissement.
+  Démarrage de la build distante
+  Compilation des sources :
+  fonctions.cpp
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error : cppconn/driver.h: Aucun fichier ou dossier de ce type
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error :     5 | #include <cppconn/driver.h>
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error :       |          ^~~~~~~~~~~~~~~~~~
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error : compilation terminated.
+  main.cpp
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error : cppconn/driver.h: Aucun fichier ou dossier de ce type
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error :     5 | #include <cppconn/driver.h>
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error :       |          ^~~~~~~~~~~~~~~~~~
+C:\Users\canina\Documents\cpp\casierRFID\lecteurBadge\fonctions.h(5,10): error : compilation terminated.
+  RFIDReader.cpp
+  serialib.cpp
