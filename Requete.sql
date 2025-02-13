@@ -12,8 +12,14 @@ INSERT INTO `Tag`(`tag`) VALUES ("[01][01][01][01][02]");
 INSERT INTO `Tag`(`tag`) VALUES ("[01][01][01][01][03]");
 INSERT INTO `Tag`(`tag`) VALUES ("[01][01][01][01][04]");
 
-INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ("Antoine", "Canin", "HBO", "AA-123-BB");
-INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ("William", "Pinalie", "Rothschild", "CC-456-DD");
+INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ( "Canin","Antoine", "HBO", "AA-123-BB");
+INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ( "Pinalie","William", "Rothschild", "CC-456-DD");
+INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ( "Guerbaa","Titouan", "LCL", "EE-789-FF");
+INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ( "Renaud","Mathis", "Renaud", "GG-101-JJ");
+
 
 INSERT INTO `Affectation`(`id_Casier`, `id_Visiteur`, `id_Tag`, `dateDebut`, `dateFin`) VALUES (1, 1, "[01][01][01][01][01]", "2020-01-01", "2020-01-02");
 INSERT INTO `Affectation`(`id_Casier`, `id_Visiteur`, `id_Tag`, `dateDebut`, `dateFin`) VALUES (2, 2, "[01][01][01][01][02]", "2020-01-01", "2020-01-02");
+
+
+
