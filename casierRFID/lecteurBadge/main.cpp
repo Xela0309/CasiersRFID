@@ -5,8 +5,9 @@
 int main() {
     RFIDReader reader("/dev/ttyUSB0");
 
-    // Paramètres de connexion à la base MySQL (via phpMyAdmin)
-    Requete dbManager("tcp://10.187.52.4", "casier", "casier", "casier_b");
+    // ParamÃ¨tres de connexion Ã  la base MySQL (via phpMyAdmin)
+    //Requete dbManager("tcp://10.187.52.4", "casier", "casier", "casier_b"); //TEST SUR UNE BASE DE DONNEES EN LIGNE ET NON SUR UNE RASPBERRY
+    Requete dbManager("tcp://10.187.52.123", "casier", "casier", "m_Casier");
 
     if (!dbManager.connexion()) {
         return -1;
@@ -19,9 +20,9 @@ int main() {
     while (true) {
         std::string badge = reader.readBadge();
         if (!badge.empty()) {
-            std::cout << "Badge enregistré : " << badge << std::endl;
+            std::cout << "Badge enregistrÃ© : " << badge << std::endl;
 
-            // Insérer dans la base de données
+            // InsÃ©rer dans la base de donnÃ©es
             dbManager.insertBadge(badge);
         }
     }
