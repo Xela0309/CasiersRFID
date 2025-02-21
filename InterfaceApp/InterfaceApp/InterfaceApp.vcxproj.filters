@@ -26,5 +26,14 @@
     <ClInclude Include="bdd.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Crypt.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="mysql-connector-c++-noinstall-1.1.9-win32\lib\mysqlcppconn.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mysql-connector-c++-noinstall-1.1.9-win32\lib\mysqlcppconn.dll" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,8 @@
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\Release\InterfaceApp.vcxproj.AssemblyReference.cache
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\Release\InterfaceApp.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\Release\InterfaceApp.MyForm.resources
+C:\Users\picarda\Desktop\CasiersRFID\InterfaceApp\InterfaceApp\Release\InterfaceApp.vcxproj.GenerateResource.cache
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\Release\InterfaceApp.vcxproj.AssemblyReference.cache
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\Release\InterfaceApp.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\Release\InterfaceApp.MyForm.resources
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\Release\InterfaceApp.vcxproj.GenerateResource.cache

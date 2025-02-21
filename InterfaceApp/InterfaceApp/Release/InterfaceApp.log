@@ -1,0 +1,19 @@
+﻿  MyForm.cpp
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\mysql-connector-c++-noinstall-1.1.9-win32\include\cppconn\sqlstring.h(39,15): warning C4251: 'sql::SQLString::realStr' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'sql::SQLString'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\xstring(5155,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\mysql-connector-c++-noinstall-1.1.9-win32\include\cppconn\exception.h(61,20): warning C4251: 'sql::SQLException::sql_state' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de class 'sql::SQLException'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\xstring(5155,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\mysql-connector-c++-noinstall-1.1.9-win32\include\cppconn\exception.h(145,20): warning C4251: 'sql::SQLUnsupportedOptionException::option' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' nécessite une interface DLL pour être utilisé(e) par les clients de struct 'sql::SQLUnsupportedOptionException'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\xstring(5155,29): message : voir la déclaration de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\bdd.hpp(56,39): warning C4101: 'e' : variable locale non référencée
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\bdd.hpp(71,33): warning C4101: 'res' : variable locale non référencée
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\bdd.hpp(70,33): warning C4101: 'stmt' : variable locale non référencée
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\bdd.hpp(83,39): warning C4101: 'e' : variable locale non référencée
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\MyForm.h(878,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\MyForm.h(943,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\MyForm.h(955,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\MyForm.h(967,21): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\bdd.hpp(120): warning C4715: 'BDD::estUnUtilisateurAutorise' : les chemins de contrôle ne retournent pas tous une valeur
+C:\Users\picarda\Desktop\Production\InterfaceApp\InterfaceApp\bdd.hpp(140): warning C4715: 'BDD::estAdministrateur' : les chemins de contrôle ne retournent pas tous une valeur
+  MyForm.obj : module MSIL détecté ; liens incrémentiels désactivés pour MSIL ; édition de liens complète en cours
+  InterfaceApp.vcxproj -> C:\Users\picarda\Desktop\Production\InterfaceApp\Release\InterfaceApp.exe
