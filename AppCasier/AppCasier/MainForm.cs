@@ -82,6 +82,8 @@ namespace AppCasier
 
         private void clickListeAffectation(object sender, EventArgs e)
         {
+            // Ajouter l'appel d'une page de détails ou je pourrai supprimer l'affectation
+
             // Afficher les détails de l'affectation sélectionnée
             string selectedAffectation = listBoxAffectation.SelectedItem.ToString();
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
