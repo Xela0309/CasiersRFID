@@ -31,18 +31,18 @@ namespace AppCasier
             this.btAddVisiteur = new System.Windows.Forms.Button();
             this.btSupprVisiteur = new System.Windows.Forms.Button();
             this.btSupprTag = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbAffectationTag = new System.Windows.Forms.ComboBox();
+            this.cbAffectationNom = new System.Windows.Forms.ComboBox();
+            this.cbAffectationCasier = new System.Windows.Forms.ComboBox();
             this.listBoxAffectation = new System.Windows.Forms.ListBox();
             this.lbListeAffectation = new System.Windows.Forms.Label();
             this.gpbListeAffectation = new System.Windows.Forms.GroupBox();
+            this.btRaffraichir = new System.Windows.Forms.Button();
             this.gpbAffectation = new System.Windows.Forms.GroupBox();
             this.lbAffectation = new System.Windows.Forms.Label();
             this.btAffectation = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btRaffraichir = new System.Windows.Forms.Button();
+            this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateDeb = new System.Windows.Forms.DateTimePicker();
             this.gpbListeAffectation.SuspendLayout();
             this.gpbAffectation.SuspendLayout();
             this.SuspendLayout();
@@ -97,29 +97,29 @@ namespace AppCasier
             this.btSupprTag.Text = "Supprimer Tag";
             this.btSupprTag.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbAffectationTag
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(319, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbAffectationTag.FormattingEnabled = true;
+            this.cbAffectationTag.Location = new System.Drawing.Point(319, 53);
+            this.cbAffectationTag.Name = "cbAffectationTag";
+            this.cbAffectationTag.Size = new System.Drawing.Size(121, 21);
+            this.cbAffectationTag.TabIndex = 6;
             // 
-            // comboBox2
+            // cbAffectationNom
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(23, 53);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 7;
+            this.cbAffectationNom.FormattingEnabled = true;
+            this.cbAffectationNom.Location = new System.Drawing.Point(23, 53);
+            this.cbAffectationNom.Name = "cbAffectationNom";
+            this.cbAffectationNom.Size = new System.Drawing.Size(121, 21);
+            this.cbAffectationNom.TabIndex = 7;
             // 
-            // comboBox3
+            // cbAffectationCasier
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(174, 53);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 8;
+            this.cbAffectationCasier.FormattingEnabled = true;
+            this.cbAffectationCasier.Location = new System.Drawing.Point(174, 53);
+            this.cbAffectationCasier.Name = "cbAffectationCasier";
+            this.cbAffectationCasier.Size = new System.Drawing.Size(121, 21);
+            this.cbAffectationCasier.TabIndex = 8;
             // 
             // listBoxAffectation
             // 
@@ -151,15 +151,25 @@ namespace AppCasier
             this.gpbListeAffectation.TabIndex = 11;
             this.gpbListeAffectation.TabStop = false;
             // 
+            // btRaffraichir
+            // 
+            this.btRaffraichir.Location = new System.Drawing.Point(149, 108);
+            this.btRaffraichir.Name = "btRaffraichir";
+            this.btRaffraichir.Size = new System.Drawing.Size(75, 23);
+            this.btRaffraichir.TabIndex = 11;
+            this.btRaffraichir.Text = "Raffraichir";
+            this.btRaffraichir.UseVisualStyleBackColor = true;
+            this.btRaffraichir.Click += new System.EventHandler(this.btRaffraichir_Click);
+            // 
             // gpbAffectation
             // 
             this.gpbAffectation.Controls.Add(this.lbAffectation);
             this.gpbAffectation.Controls.Add(this.btAffectation);
-            this.gpbAffectation.Controls.Add(this.dateTimePicker2);
-            this.gpbAffectation.Controls.Add(this.dateTimePicker1);
-            this.gpbAffectation.Controls.Add(this.comboBox2);
-            this.gpbAffectation.Controls.Add(this.comboBox3);
-            this.gpbAffectation.Controls.Add(this.comboBox1);
+            this.gpbAffectation.Controls.Add(this.dtpDateFin);
+            this.gpbAffectation.Controls.Add(this.dtpDateDeb);
+            this.gpbAffectation.Controls.Add(this.cbAffectationNom);
+            this.gpbAffectation.Controls.Add(this.cbAffectationCasier);
+            this.gpbAffectation.Controls.Add(this.cbAffectationTag);
             this.gpbAffectation.Location = new System.Drawing.Point(300, 95);
             this.gpbAffectation.Name = "gpbAffectation";
             this.gpbAffectation.Size = new System.Drawing.Size(464, 224);
@@ -184,30 +194,21 @@ namespace AppCasier
             this.btAffectation.TabIndex = 11;
             this.btAffectation.Text = "Affectation";
             this.btAffectation.UseVisualStyleBackColor = true;
+            this.btAffectation.Click += new System.EventHandler(this.btAffectation_Click);
             // 
-            // dateTimePicker2
+            // dtpDateFin
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(268, 111);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(181, 20);
-            this.dateTimePicker2.TabIndex = 10;
+            this.dtpDateFin.Location = new System.Drawing.Point(268, 111);
+            this.dtpDateFin.Name = "dtpDateFin";
+            this.dtpDateFin.Size = new System.Drawing.Size(181, 20);
+            this.dtpDateFin.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dtpDateDeb
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(23, 111);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(179, 20);
-            this.dateTimePicker1.TabIndex = 9;
-            // 
-            // btRaffraichir
-            // 
-            this.btRaffraichir.Location = new System.Drawing.Point(149, 108);
-            this.btRaffraichir.Name = "btRaffraichir";
-            this.btRaffraichir.Size = new System.Drawing.Size(75, 23);
-            this.btRaffraichir.TabIndex = 11;
-            this.btRaffraichir.Text = "Raffraichir";
-            this.btRaffraichir.UseVisualStyleBackColor = true;
-            this.btRaffraichir.Click += new System.EventHandler(this.btRaffraichir_Click);
+            this.dtpDateDeb.Location = new System.Drawing.Point(23, 111);
+            this.dtpDateDeb.Name = "dtpDateDeb";
+            this.dtpDateDeb.Size = new System.Drawing.Size(179, 20);
+            this.dtpDateDeb.TabIndex = 9;
             // 
             // MainForm
             // 
@@ -237,17 +238,17 @@ namespace AppCasier
         private Button btAddVisiteur;
         private Button btSupprVisiteur;
         private Button btSupprTag;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox cbAffectationTag;
+        private ComboBox cbAffectationNom;
+        private ComboBox cbAffectationCasier;
         private ListBox listBoxAffectation;
         private Label lbListeAffectation;
         private GroupBox gpbListeAffectation;
         private GroupBox gpbAffectation;
         private Label lbAffectation;
         private Button btAffectation;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDateFin;
+        private DateTimePicker dtpDateDeb;
         private Button btRaffraichir;
     }
 }

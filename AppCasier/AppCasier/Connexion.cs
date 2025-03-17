@@ -38,8 +38,6 @@ namespace AppCasier
                 MessageBox.Show("Connexion échouée !");
             }
 
-            this.Close(); // Ferme la page actuelle pour revenir à `MainForm`
-
         }
 
         private void btCancel_Click(object sender, EventArgs e)

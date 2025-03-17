@@ -60,6 +60,7 @@
             this.tbPasswd.Name = "tbPasswd";
             this.tbPasswd.Size = new System.Drawing.Size(130, 20);
             this.tbPasswd.TabIndex = 2;
+            this.tbPasswd.UseSystemPasswordChar = true;
             // 
             // lbLogin
             // 
@@ -114,7 +115,7 @@
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.lbConnexion);
             this.Name = "Connexion";
-            this.Text = "Form1";
+            this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

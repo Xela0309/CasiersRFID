@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AppCasier;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -41,6 +42,7 @@ namespace testBDD
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erreur lors de la connexion à la base de données : " + ex.Message);
                 return false;
             }
         }
@@ -54,6 +56,7 @@ namespace testBDD
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erreur lors de la fermeture de la connexion à la base de données : " + ex.Message);
                 return false;
             }
         }
@@ -71,7 +74,8 @@ namespace testBDD
             }
             catch (Exception ex)
             {
-                 return false;
+                MessageBox.Show("Erreur lors de l'exécution de la requête : " + ex.Message);
+                return false;
 
             }
         }
@@ -125,6 +129,7 @@ namespace testBDD
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erreur lors de la vérification de l'utilisateur : " + ex.Message);
                 return false;
             }
         }
@@ -149,6 +154,7 @@ namespace testBDD
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erreur lors de la récupération des affectations : " + ex.Message);
                 return null;
             }
         }
@@ -182,6 +188,115 @@ namespace testBDD
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erreur lors de la récupération des détails de l'affectation : " + ex.Message);
+                return null;
+            }
+        }
+
+        public bool ajouterAffectation(string tag, string nom,string casier, string dateDeb, string dateFin)
+        {
+            try
+            {
+
+                string requete = "INSERT INTO Affectation (id_Tag, id_Visiteur, id_Casier, dateDebut, dateFin) VALUES ('" + tag + "', (SELECT id_Visiteur FROM Visiteur WHERE nom = '" + nom + "' ) , '" + casier + "' , '" + dateDeb + "' , '" + dateFin + "')";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ajout de l'affectation : " + ex.Message);
+                return false;
+            }
+        }
+
+        public void supprimerAffectation(string casier)
+        {
+            try
+            {
+                string requete = "DELETE FROM Affectation WHERE id_Casier = '" + casier + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la suppression de l'affectation : " + ex.Message);
+            }
+        }
+
+        public string[] recupNomVisiteurNonAffecté()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Visiteur WHERE id_Visiteur NOT IN (SELECT id_Visiteur FROM Affectation)";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(reader[1].ToString());
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des visiteurs : " + ex.Message);
+                return null;
+            }   
+        }
+
+        public string[] recupNumCasierNonAffecté()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Casier WHERE numeroCasier NOT IN (SELECT id_Casier FROM Affectation)";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(reader[0].ToString());
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des casiers : " + ex.Message);
+                return null;
+            }
+        }
+
+        public string[] recupNumTagNonAffecté()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Tag WHERE tag NOT IN (SELECT id_Tag FROM Affectation)";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(reader[0].ToString());
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des tags : " + ex.Message);
                 return null;
             }
         }

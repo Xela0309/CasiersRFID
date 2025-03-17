@@ -47,3 +47,4 @@ C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\MySqlConnect
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\MySqlConnector.xml
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageAffichageInterface.resources

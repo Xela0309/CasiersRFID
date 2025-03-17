@@ -30,6 +30,7 @@ namespace AppCasier
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 InitializeComponent();
                 AfficherAffectation(); // Afficher les affectations
+                affichageSelection();
             }
         }
 
@@ -62,8 +63,11 @@ namespace AppCasier
             login = newData;
         } 
 
-        private void AfficherAffectation()
+        public void AfficherAffectation()
         {
+
+            listBoxAffectation.Items.Clear(); // Effacer les affectations
+
             // Afficher les affectations
             string[] listAffectation = db.listeAffectation();
 
@@ -72,31 +76,110 @@ namespace AppCasier
                 listBoxAffectation.Items.Add(listAffectation[i]);
             }
 
+            affichageSelection();
+
         }
 
         private void btRaffraichir_Click(object sender, EventArgs e)
         {
-            listBoxAffectation.Items.Clear(); // Effacer les affectations
             AfficherAffectation(); // Rafraîchir les affectations
+            affichageSelection(); // Rafraîchir les sélections
         }
 
         private void clickListeAffectation(object sender, EventArgs e)
         {
-            // Ajouter l'appel d'une page de détails ou je pourrai supprimer l'affectation
+            // Gerer si il nèy a pas d'affectation
+            if (listBoxAffectation.SelectedItem == null)
+            {
+                return;
+            }
 
             // Afficher les détails de l'affectation sélectionnée
             string selectedAffectation = listBoxAffectation.SelectedItem.ToString();
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
 
             // Afficher les détails de l'affectation
-            MessageBox.Show("Tag : " + detailsAffectation[0] + "\n" 
-                + "Nom : " + detailsAffectation[1] + "\n" 
-                + "Prenom : " + detailsAffectation[2] + "\n"
-                + "Compagnie :" + detailsAffectation[3] + "\n" 
-                + "Numero de plaque : " + detailsAffectation[4] + "\n"
-                + "Numero de casier : " + detailsAffectation[5] + "\n" 
-                + "Date d'attribution : " + detailsAffectation[6] + "\n" 
-                + "Date de fin d'attribution : " + detailsAffectation[7]);
+            pageAffichageInterface pageAffichage = new pageAffichageInterface(detailsAffectation,this);
+            pageAffichage.ShowDialog();
+
+        }
+
+        private void affichageSelection()
+        {
+            // Supprimer les éléments de la liste
+            cbAffectationNom.Items.Clear();
+            cbAffectationCasier.Items.Clear();
+            cbAffectationTag.Items.Clear();
+
+            cbAffectationCasier.Text = "";
+            cbAffectationNom.Text = "";
+            cbAffectationTag.Text = "";
+
+            // Récupérer les détails de l'affectation sélectionnée
+            string[] Nom = db.recupNomVisiteurNonAffecté();
+            string[] Casier = db.recupNumCasierNonAffecté();
+            string[] Tag = db.recupNumTagNonAffecté();
+
+            // Afficher les détails de l'affectation
+            for (int i = 0; i < Nom.Length; i++)
+            {
+                cbAffectationNom.Items.Add(Nom[i]);
+            }
+
+            for (int i = 0; i < Casier.Length; i++)
+            {
+                cbAffectationCasier.Items.Add(Casier[i]);
+            }
+
+            for (int i = 0; i < Tag.Length; i++)
+            {
+                cbAffectationTag.Items.Add(Tag[i]);
+            }
+
+        }
+
+        private void btAffectation_Click(object sender, EventArgs e)
+        {
+
+            if (cbAffectationTag.SelectedItem == null || cbAffectationNom.SelectedItem == null || cbAffectationCasier.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez remplir tous les champs !");
+                return;
+            }
+            else
+            {
+                if (dtpDateDeb.Value >= dtpDateFin.Value)
+                {
+                    MessageBox.Show("La date de début doit être inférieure à la date de fin !");
+                    return;
+                }
+                else
+                {
+                    if (dtpDateDeb.Value < DateTime.Now)
+                    {
+                        // Recuperer les informations de l'affectation
+                        string tag = cbAffectationTag.SelectedItem.ToString();
+                        string nom = cbAffectationNom.SelectedItem.ToString();
+                        string casier = cbAffectationCasier.SelectedItem.ToString();
+                        string dateDeb = dtpDateDeb.Value.ToString("yyyy-MM-dd");
+                        string dateFin = dtpDateFin.Value.ToString("yyyy-MM-dd");
+
+                        // Ajouter l'affectation
+                        if (db.ajouterAffectation(tag, nom, casier, dateDeb, dateFin))
+                        {
+                            MessageBox.Show("Affectation ajoutée !");
+                            // Mettre à jour l'affichage
+                            AfficherAffectation();
+                            affichageSelection();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erreur lors de l'ajout de l'affectation !");
+                        }
+                    }
+                }
+            }
         }
     }
 }
