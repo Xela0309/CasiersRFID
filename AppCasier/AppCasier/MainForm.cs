@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using testBDD;
 
 namespace AppCasier
 {
@@ -16,9 +15,11 @@ namespace AppCasier
 
         private string login = ""; // Variable conservée
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
+        MenuHamburger menu = new MenuHamburger(); // Instance de la classe Menu
 
         public MainForm()
         {
+
             OpenConnexion(); // Ouvrir Page de Connexion
             if (login == "") // Si l'utilisateur n'est pas connecté
             {
@@ -31,6 +32,9 @@ namespace AppCasier
                 InitializeComponent();
                 AfficherAffectation(); // Afficher les affectations
                 affichageSelection();
+                afficherLogin(); // Afficher le login de l'utilisateur
+                menu.InitializeHamburgerMenu(this); // Initialiser le menu
+
             }
         }
 
@@ -41,15 +45,6 @@ namespace AppCasier
             this.Hide();  // Cacher MainForm
             connexion.ShowDialog();  // Afficher Connexion et attendre sa fermeture
             this.Show();  // Rendre MainForm visible après la fermeture de Connexion
-        }
-
-        // Ouvrir Page1
-        private void buttonOpenPage1_Click(object sender, EventArgs e)
-        {
-            Page1 page1 = new Page1(this);
-            this.Hide();  // Cacher MainForm
-            page1.ShowDialog();  // Afficher Page1 et attendre sa fermeture
-            this.Show();  // Rendre MainForm visible après la fermeture de Page1
         }
 
         // Accéder aux données partagées
@@ -99,7 +94,7 @@ namespace AppCasier
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
 
             // Afficher les détails de l'affectation
-            pageAffichageInterface pageAffichage = new pageAffichageInterface(detailsAffectation,this);
+            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation,this);
             pageAffichage.ShowDialog();
 
         }
@@ -180,6 +175,17 @@ namespace AppCasier
                     }
                 }
             }
+        }
+
+        private void FermetureMenuHamburger(object sender, EventArgs e)
+        {
+            menu.menuOpen = false;
+            menu.menuTimer.Start();
+        }
+
+        private void afficherLogin()
+        {
+            this.lbLoginActuel.Text = login;
         }
     }
 }

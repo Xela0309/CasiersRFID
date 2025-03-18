@@ -12,7 +12,7 @@ using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
-namespace testBDD
+namespace AppCasier
 {
     internal class DatabaseConnection
     {
@@ -130,6 +130,33 @@ namespace testBDD
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de la vérification de l'utilisateur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool estAdministateur(string login)
+        {
+            try
+            {
+                string requete = "SELECT * FROM Utilisateur WHERE login = '" + login + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader[1].ToString() == "admin")
+                    {
+                        reader.Close();
+                        return true;
+                    }
+                }
+                reader.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la vérification de l'administrateur : " + ex.Message);
                 return false;
             }
         }
@@ -298,6 +325,44 @@ namespace testBDD
             {
                 MessageBox.Show("Erreur lors de la récupération des tags : " + ex.Message);
                 return null;
+            }
+        }
+
+        public bool ajouterUtilisateur(string login, string pass, string role)
+        {
+            try
+            {
+                // Chiffrage du login et du mot de passe
+                login = chiffrage.Encrypt(login);
+                pass = chiffrage.Encrypt(pass);
+
+                string requete = "SELECT * FROM Utilisateur WHERE login = '" + login + "'";
+
+                // Vérifier si l'utilisateur existe déjà
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    reader.Close();
+                    return false;
+                }
+                else
+                {
+                    reader.Close();
+
+                    requete = "INSERT INTO Utilisateur (login, password, role) VALUES ('" + login + "', '" + pass + "', '" + role + "')";
+
+                    MySqlCommand cmd1 = new MySqlCommand(requete, connection);
+                    cmd1.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ajout de l'utilisateur : " + ex.Message);
+                return false;
             }
         }
     }

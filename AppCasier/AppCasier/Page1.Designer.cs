@@ -48,53 +48,60 @@ namespace AppCasier
 
         private void InitializeComponent()
         {
-            this.labelData = new Label();
-            this.buttonSaveData = new Button();
-            this.buttonBack = new Button();
-            this.textBoxInput = new TextBox();
+            this.labelData = new System.Windows.Forms.Label();
+            this.buttonSaveData = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-
+            // 
             // labelData
+            // 
             this.labelData.AutoSize = true;
-            this.labelData.Location = new System.Drawing.Point(50, 50);
+            this.labelData.Location = new System.Drawing.Point(111, 56);
             this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(200, 20);
+            this.labelData.Size = new System.Drawing.Size(112, 13);
             this.labelData.TabIndex = 0;
-            this.labelData.Text = "Bienvenue sur Page 1"; // Texte initial
-
-            // textBoxInput
-            this.textBoxInput.Location = new System.Drawing.Point(50, 100);
-            this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(200, 26);
-            this.textBoxInput.TabIndex = 1;
-
+            this.labelData.Text = "Bienvenue sur Page 1";
+            this.labelData.Click += new System.EventHandler(this.labelData_Click);
+            // 
             // buttonSaveData
-            this.buttonSaveData.Location = new System.Drawing.Point(50, 150);
+            // 
+            this.buttonSaveData.Location = new System.Drawing.Point(111, 156);
             this.buttonSaveData.Name = "buttonSaveData";
             this.buttonSaveData.Size = new System.Drawing.Size(100, 30);
             this.buttonSaveData.TabIndex = 2;
             this.buttonSaveData.Text = "Save Data";
             this.buttonSaveData.UseVisualStyleBackColor = true;
             this.buttonSaveData.Click += new System.EventHandler(this.buttonSaveData_Click);
-
+            // 
             // buttonBack
-            this.buttonBack.Location = new System.Drawing.Point(150, 150);
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(211, 156);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(100, 30);
             this.buttonBack.TabIndex = 3;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-
+            // 
+            // textBoxInput
+            // 
+            this.textBoxInput.Location = new System.Drawing.Point(111, 106);
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(200, 20);
+            this.textBoxInput.TabIndex = 1;
+            // 
             // Page1
+            // 
+            this.ClientSize = new System.Drawing.Size(384, 261);
             this.Controls.Add(this.labelData);
             this.Controls.Add(this.textBoxInput);
             this.Controls.Add(this.buttonSaveData);
             this.Controls.Add(this.buttonBack);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(400, 300);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
     }
 }

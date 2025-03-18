@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using testBDD;
+
 
 namespace AppCasier
 {
@@ -17,6 +17,10 @@ namespace AppCasier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Page 1 pour test
+            // Application.Run(new Page1());
+
 
             DatabaseConnection db = new DatabaseConnection();
             db.OpenConnection();

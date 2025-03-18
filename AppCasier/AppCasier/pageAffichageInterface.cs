@@ -8,15 +8,14 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using testBDD;
 
 namespace AppCasier
 {
-    public partial class pageAffichageInterface : Form
+    public partial class PageAffichageInterface : Form
     {
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
         MainForm mainForm;
-        public pageAffichageInterface(string[] detailsAffectation,MainForm form)
+        public PageAffichageInterface(string[] detailsAffectation,MainForm form)
         {
             InitializeComponent();
             AffichageInfo(detailsAffectation);

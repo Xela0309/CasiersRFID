@@ -112,6 +112,19 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuHamburger.cs" />
+    <Compile Include="PageAjoutTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAjoutTag.Designer.cs">
+      <DependentUpon>PageAjoutTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageAjoutUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAjoutUtilisateur.Designer.cs">
+      <DependentUpon>PageAjoutUtilisateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +137,17 @@
     <Compile Include="Page1.Designer.cs">
       <DependentUpon>Page1.cs</DependentUpon>
     </Compile>
-    <Compile Include="pageAffichageInterface.cs">
+    <Compile Include="PageAffichageInterface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pageAffichageInterface.Designer.cs">
-      <DependentUpon>pageAffichageInterface.cs</DependentUpon>
+    <Compile Include="PageAffichageInterface.Designer.cs">
+      <DependentUpon>PageAffichageInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageAjoutVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageAjoutVisiteur.Designer.cs">
+      <DependentUpon>PageAjoutVisiteur.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,8 +157,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pageAffichageInterface.resx">
-      <DependentUpon>pageAffichageInterface.cs</DependentUpon>
+    <EmbeddedResource Include="Page1.resx">
+      <DependentUpon>Page1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAffichageInterface.resx">
+      <DependentUpon>PageAffichageInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAjoutUtilisateur.resx">
+      <DependentUpon>PageAjoutUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

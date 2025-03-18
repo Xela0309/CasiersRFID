@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using testBDD;
 
 namespace AppCasier
 {
@@ -27,16 +26,21 @@ namespace AppCasier
 
         private void btConnexion_Click(object sender, EventArgs e)
         {
-            mainForm.SetUserData(tbLogin.Text); // Met à jour les données
+            //if (db.estAdministateur(tbLogin.Text))
+            //{
+            //    mainForm.SetUserData("S" + tbLogin.Text); // Met à jour les données
+            //}
 
             if (db.estUtilisateur(tbLogin.Text, tbPasswd.Text))
             {
+                mainForm.SetUserData("U" + tbLogin.Text); // Met à jour les données
                 this.Close(); // Ferme la page actuelle pour revenir à `MainForm`
             }
             else
             {
                 MessageBox.Show("Connexion échouée !");
             }
+
 
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace AppCasier
 {
-    partial class pageAffichageInterface
+    partial class PageAffichageInterface
     {
         /// <summary>
         /// Required designer variable.
