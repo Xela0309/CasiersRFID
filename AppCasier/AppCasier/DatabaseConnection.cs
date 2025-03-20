@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AppCasier;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace AppCasier
@@ -18,7 +10,7 @@ namespace AppCasier
     {
         private MySqlConnection connection;
 
-        private Chiffrage chiffrage = new Chiffrage("CryptageApplication"); // Chiffrement du mot de passe
+        private ChiffrageXOR chiffrage = new ChiffrageXOR("ChiffrementXORApplication"); // Chiffrement du mot de passe
 
         // Chaîne de connexion pour MySQL/MariaDB
         private string connectionString = "server=10.187.52.4;userid=casier;password=casier;database=casier_b;";
@@ -138,14 +130,18 @@ namespace AppCasier
         {
             try
             {
-                string requete = "SELECT * FROM Utilisateur WHERE login = '" + login + "'";
+
+
+                string requete = "SELECT * FROM Utilisateur WHERE role = 'admin' ";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
+                login = chiffrage.Encrypt(login);
+
                 while (reader.Read())
                 {
-                    if (reader[1].ToString() == "admin")
+                    if (reader[2].ToString() == login)
                     {
                         reader.Close();
                         return true;
@@ -224,6 +220,7 @@ namespace AppCasier
         {
             try
             {
+                nom = chiffrage.Encrypt(nom);
 
                 string requete = "INSERT INTO Affectation (id_Tag, id_Visiteur, id_Casier, dateDebut, dateFin) VALUES ('" + tag + "', (SELECT id_Visiteur FROM Visiteur WHERE nom = '" + nom + "' ) , '" + casier + "' , '" + dateDeb + "' , '" + dateFin + "')";
 
@@ -266,7 +263,7 @@ namespace AppCasier
 
                 while (reader.Read())
                 {
-                    liste.Add(reader[1].ToString());
+                    liste.Add(chiffrage.Decrypt(reader[1].ToString()));
                 }
                 reader.Close();
                 return liste.ToArray();
@@ -362,6 +359,29 @@ namespace AppCasier
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de l'ajout de l'utilisateur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool ajouterVisiteur(string nom, string prenom, string plaque, string compagnie)
+        {
+            try
+            {
+                // Chiffrage des informations
+                nom = chiffrage.Encrypt(nom);
+                prenom = chiffrage.Encrypt(prenom);
+                plaque = chiffrage.Encrypt(plaque);
+                compagnie = chiffrage.Encrypt(compagnie);
+
+                string requete = "INSERT INTO Visiteur (nom, prenom, numPlaque, compagnie) VALUES ('" + nom + "', '" + prenom + "', '" + plaque + "', '" + compagnie + "')";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ajout du visiteur : " + ex.Message);
                 return false;
             }
         }

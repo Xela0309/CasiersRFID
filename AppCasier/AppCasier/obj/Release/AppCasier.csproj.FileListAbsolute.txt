@@ -48,5 +48,5 @@ C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\Microsoft.Ex
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\MySqlConnector.xml
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageAffichageInterface.resources
-C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.Page1.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageAjoutUtilisateur.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.PageAjoutVisiteur.resources

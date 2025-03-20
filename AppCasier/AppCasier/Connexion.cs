@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace AppCasier
 {
+
     public partial class Connexion : Form
     {
         private MainForm mainForm; // Référence vers MainForm
@@ -26,14 +27,24 @@ namespace AppCasier
 
         private void btConnexion_Click(object sender, EventArgs e)
         {
-            //if (db.estAdministateur(tbLogin.Text))
-            //{
-            //    mainForm.SetUserData("S" + tbLogin.Text); // Met à jour les données
-            //}
-
-            if (db.estUtilisateur(tbLogin.Text, tbPasswd.Text))
+            if (db.estAdministateur(tbLogin.Text))
             {
-                mainForm.SetUserData("U" + tbLogin.Text); // Met à jour les données
+                if (db.estUtilisateur(tbLogin.Text, tbPasswd.Text))
+                {
+                    mainForm.SetLogin(tbLogin.Text); // Met à jour les données
+                    mainForm.SetRole("admin"); // Met à jour les données
+                    this.Close(); // Ferme la page actuelle pour revenir à `MainForm`
+
+                }
+                else
+                {
+                    MessageBox.Show("Connexion échouée !");
+                }
+            }
+            else if (db.estUtilisateur(tbLogin.Text, tbPasswd.Text))
+            {
+                mainForm.SetLogin(tbLogin.Text); // Met à jour les données
+                mainForm.SetRole("user"); // Met à jour les données
                 this.Close(); // Ferme la page actuelle pour revenir à `MainForm`
             }
             else

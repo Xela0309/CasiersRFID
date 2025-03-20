@@ -131,12 +131,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Page1.Designer.cs">
-      <DependentUpon>Page1.cs</DependentUpon>
-    </Compile>
     <Compile Include="PageAffichageInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,14 +151,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page1.resx">
-      <DependentUpon>Page1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PageAffichageInterface.resx">
       <DependentUpon>PageAffichageInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageAjoutUtilisateur.resx">
       <DependentUpon>PageAjoutUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageAjoutVisiteur.resx">
+      <DependentUpon>PageAjoutVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -18,21 +18,13 @@ namespace AppCasier
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Page 1 pour test
-            // Application.Run(new Page1());
 
 
-            DatabaseConnection db = new DatabaseConnection();
-            db.OpenConnection();
-
-            Console.WriteLine("Connexion ouverte !");
-
-
-            MainForm main = new MainForm();
+        MainForm main = new MainForm();
             
             new Connexion(main);
 
-            if (main.GetUserData() == "")
+            if (main.GetLogin() == "")
             {
                 Application.Exit();
             }

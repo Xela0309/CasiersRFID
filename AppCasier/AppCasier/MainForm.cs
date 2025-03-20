@@ -1,40 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace AppCasier
 {
+
     public partial class MainForm : Form
     {
 
         private string login = ""; // Variable conservée
+        private string role = ""; // Variable conservée
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
         MenuHamburger menu = new MenuHamburger(); // Instance de la classe Menu
 
         public MainForm()
         {
-
             OpenConnexion(); // Ouvrir Page de Connexion
             if (login == "") // Si l'utilisateur n'est pas connecté
             {
                 // Fermer l'application
                 Application.Exit();
             }
-            else
+            else if (role == "admin")
             { 
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 InitializeComponent();
-                AfficherAffectation(); // Afficher les affectations
+                afficherAffectation(); // Afficher les affectations
                 affichageSelection();
                 afficherLogin(); // Afficher le login de l'utilisateur
                 menu.InitializeHamburgerMenu(this); // Initialiser le menu
+                menu.SetMainForm(this); // Mettre à jour le formulaire principal
 
+            }
+            else
+            {
+                db.OpenConnection(); // Ouvrir la connexion à la base de données
+                InitializeComponent();
+                afficherAffectation(); // Afficher les affectations
+                affichageSelection();
+                afficherLogin(); // Afficher le login de l'utilisateur
             }
         }
 
@@ -48,17 +52,27 @@ namespace AppCasier
         }
 
         // Accéder aux données partagées
-        public string GetUserData()
+        public string GetLogin()
         {
             return login;
         }
 
-        public void SetUserData(string newData)
+        public void SetLogin(string newData)
         {
             login = newData;
-        } 
+        }
 
-        public void AfficherAffectation()
+        public string GetRole()
+        {
+            return role;
+        }
+
+        public void SetRole(string newData)
+        {
+            role = newData;
+        }
+
+        public void afficherAffectation()
         {
 
             listBoxAffectation.Items.Clear(); // Effacer les affectations
@@ -68,16 +82,16 @@ namespace AppCasier
 
             for (int i = 0; i < listAffectation.Length; i++)
             {
-                listBoxAffectation.Items.Add(listAffectation[i]);
+                listBoxAffectation.Items.Add("Casier n°" + listAffectation[i]);
             }
 
             affichageSelection();
 
         }
 
-        private void btRaffraichir_Click(object sender, EventArgs e)
+        public void Maj_Affichage()
         {
-            AfficherAffectation(); // Rafraîchir les affectations
+            afficherAffectation(); // Rafraîchir les affectations
             affichageSelection(); // Rafraîchir les sélections
         }
 
@@ -89,8 +103,8 @@ namespace AppCasier
                 return;
             }
 
-            // Afficher les détails de l'affectation sélectionnée
-            string selectedAffectation = listBoxAffectation.SelectedItem.ToString();
+            // Selectionner le numero du casier
+            string selectedAffectation = listBoxAffectation.SelectedItem.ToString().Substring(9);
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
 
             // Afficher les détails de l'affectation
@@ -164,9 +178,8 @@ namespace AppCasier
                         {
                             MessageBox.Show("Affectation ajoutée !");
                             // Mettre à jour l'affichage
-                            AfficherAffectation();
+                            afficherAffectation();
                             affichageSelection();
-
                         }
                         else
                         {
@@ -179,13 +192,21 @@ namespace AppCasier
 
         private void FermetureMenuHamburger(object sender, EventArgs e)
         {
-            menu.menuOpen = false;
-            menu.menuTimer.Start();
+            if (role == "admin")
+            {
+                menu.menuOpen = false;
+                menu.menuTimer.Start();
+            }
         }
 
         private void afficherLogin()
         {
             this.lbLoginActuel.Text = login;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,6 +14,7 @@ namespace AppCasier
         public Timer menuTimer;
         private Panel menuPanel;
 
+        MainForm mainform;
         public MenuHamburger()
         {}
 
@@ -103,7 +104,7 @@ namespace AppCasier
             else if (menuItem == "Ajouter Visiteur")
             {
                 // Ouvrir la page d'ajout de visiteur
-                PageAjoutVisiteur page = new PageAjoutVisiteur();
+                PageAjoutVisiteur page = new PageAjoutVisiteur(mainform);
                 page.ShowDialog();
             }
             else if (menuItem == "Ajout Tag")
@@ -118,6 +119,11 @@ namespace AppCasier
                 menuOpen = false;
                 menuTimer.Start();
             }
+        }
+
+        public void SetMainForm(MainForm form)
+        {
+            mainform = form;
         }
     }
 }
