@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
 
+//d2c72a3e81
 
 namespace AppCasier
 {

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace AppCasier
 {
+
     internal static class Program
     {
+
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

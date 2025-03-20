@@ -13,7 +13,7 @@ namespace AppCasier
 {
     public partial class PageAffichageInterface : Form
     {
-        ChiffrageXOR ch = new ChiffrageXOR("CryptageApplication");
+        ChiffrageXOR ch = new ChiffrageXOR("ChiffrementXORApplication");
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
         MainForm mainForm;
         public PageAffichageInterface(string[] detailsAffectation,MainForm form)
@@ -46,6 +46,7 @@ namespace AppCasier
         private void AffichageInfo(string[] detailsAffectation)
         {
             lbAffectationTagINFO.Text = detailsAffectation[0];
+            //lbAffectationTagINFO.Text = ch.Decrypt(detailsAffectation[0]);
             lbAffectationNomINFO.Text = ch.Decrypt(detailsAffectation[1]);
             lbAffectationPrenomINFO.Text = ch.Decrypt(detailsAffectation[2]);
             lbAffectationCompagnieINFO.Text = ch.Decrypt(detailsAffectation[3]);

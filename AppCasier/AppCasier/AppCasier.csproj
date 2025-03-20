@@ -143,6 +143,24 @@
     <Compile Include="PageAjoutVisiteur.Designer.cs">
       <DependentUpon>PageAjoutVisiteur.cs</DependentUpon>
     </Compile>
+    <Compile Include="pageSupprTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pageSupprTag.Designer.cs">
+      <DependentUpon>pageSupprTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pageSupprUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pageSupprUtilisateur.Designer.cs">
+      <DependentUpon>pageSupprUtilisateur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pageSupprVisiteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pageSupprVisiteur.Designer.cs">
+      <DependentUpon>pageSupprVisiteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Connexion.resx">
@@ -159,6 +177,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageAjoutVisiteur.resx">
       <DependentUpon>PageAjoutVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pageSupprTag.resx">
+      <DependentUpon>pageSupprTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pageSupprUtilisateur.resx">
+      <DependentUpon>pageSupprUtilisateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pageSupprVisiteur.resx">
+      <DependentUpon>pageSupprVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
