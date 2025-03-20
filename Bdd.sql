@@ -7,15 +7,15 @@ DROP TABLE IF EXISTS Tag;
 
 
 CREATE TABLE Tag (
-    tag VARCHAR(20) PRIMARY KEY NOT NULL 
+    tag VARCHAR(100) PRIMARY KEY NOT NULL 
 ) ENGINE = InnoDB;
 
 CREATE TABLE Visiteur (
     id_Visiteur INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(50) NOT NULL,
-    prenom VARCHAR(50) NOT NULL,
-    compagnie VARCHAR(70) NOT NULL,
-    numPlaque VARCHAR(9) NOT NULL
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    compagnie VARCHAR(100) NOT NULL,
+    numPlaque VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Casier (
@@ -26,7 +26,7 @@ CREATE TABLE Affectation (
     id_Affectation INT PRIMARY KEY AUTO_INCREMENT,
     id_Casier INT NOT NULL,
     id_Visiteur INT NOT NULL,
-    id_Tag VARCHAR(20) NOT NULL,
+    id_Tag VARCHAR(100) NOT NULL,
     dateDebut DATE NOT NULL,
     dateFin DATE NOT NULL,
     CONSTRAINT fk_id_Casier FOREIGN KEY (id_Casier) REFERENCES Casier(numeroCasier),
@@ -37,6 +37,6 @@ CREATE TABLE Affectation (
 CREATE TABLE Utilisateur (
     id_Administrateur INT PRIMARY KEY AUTO_INCREMENT,
     role Enum('admin', 'user') NOT NULL,
-    login VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL
+    login VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
