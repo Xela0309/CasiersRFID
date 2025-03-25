@@ -22,7 +22,7 @@ namespace AppCasier
                 Application.Exit();
             }
             else if (role == "admin")
-            {
+            { 
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 InitializeComponent();
                 afficherAffectation(); // Afficher les affectations
@@ -108,7 +108,7 @@ namespace AppCasier
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
 
             // Afficher les détails de l'affectation
-            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation, this);
+            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation,this);
             pageAffichage.ShowDialog();
 
         }
@@ -125,7 +125,7 @@ namespace AppCasier
             cbAffectationTag.Text = "";
 
             // Récupérer les détails de l'affectation sélectionnée
-            string[] Nom = db.recupNomVisiteurNonAffecté();
+            string[] Nom = db.recupNomPrenomVisiteurNonAffecté();
             string[] Casier = db.recupNumCasierNonAffecté();
             string[] Tag = db.recupNumTagNonAffecté();
 
@@ -168,13 +168,16 @@ namespace AppCasier
                     {
                         // Recuperer les informations de l'affectation
                         string tag = cbAffectationTag.SelectedItem.ToString();
-                        string nom = cbAffectationNom.SelectedItem.ToString();
+                        // Recuperer le nom du visiteur
+                        string[] nomPrenom = cbAffectationNom.SelectedItem.ToString().Split(' ');
+                        string nom = nomPrenom[0];
+                        string prenom = nomPrenom[1];
                         string casier = cbAffectationCasier.SelectedItem.ToString();
                         string dateDeb = dtpDateDeb.Value.ToString("yyyy-MM-dd");
                         string dateFin = dtpDateFin.Value.ToString("yyyy-MM-dd");
 
                         // Ajouter l'affectation
-                        if (db.ajouterAffectation(tag, nom, casier, dateDeb, dateFin))
+                        if (db.ajouterAffectation(tag, nom,prenom, casier, dateDeb, dateFin))
                         {
                             MessageBox.Show("Affectation ajoutée !");
                             // Mettre à jour l'affichage
@@ -204,7 +207,7 @@ namespace AppCasier
             this.lbLoginActuel.Text = login;
         }
 
-        private void btLogout_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }

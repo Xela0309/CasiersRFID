@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Permissions;
 using System.Windows.Forms;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
 
@@ -191,13 +190,14 @@ namespace AppCasier
             }
         }
 
-        public bool ajouterAffectation(string tag, string nom,string casier, string dateDeb, string dateFin)
+        public bool ajouterAffectation(string tag, string nom,string prenom ,string casier, string dateDeb, string dateFin)
         {
             try
             {
                 nom = chiffrage.Encrypt(nom);
+                prenom = chiffrage.Encrypt(prenom);
 
-                string requete = "INSERT INTO Affectation (id_Tag, id_Visiteur, id_Casier, dateDebut, dateFin) VALUES ('" + tag + "', (SELECT id_Visiteur FROM Visiteur WHERE nom = '" + nom + "' ) , '" + casier + "' , '" + dateDeb + "' , '" + dateFin + "')";
+                string requete = "INSERT INTO Affectation (id_Tag, id_Visiteur, id_Casier, dateDebut, dateFin) VALUES ('" + tag + "', (SELECT id_Visiteur FROM Visiteur WHERE nom = '" + nom + "' AND prenom = '" + prenom + "' ) , '" + casier + "' , '" + dateDeb + "' , '" + dateFin + "')";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 cmd.ExecuteNonQuery();
@@ -361,13 +361,39 @@ namespace AppCasier
             }
         }
 
-        public bool supprVisiteur(string nom)
+        public string[] recupNomPrenomVisiteurNonAffecté()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Visiteur WHERE id_Visiteur NOT IN (SELECT id_Visiteur FROM Affectation)";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(chiffrage.Decrypt(reader[1].ToString()) + " " + chiffrage.Decrypt(reader[2].ToString()));
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des visiteurs : " + ex.Message);
+                return null;
+            }
+        }
+
+        public bool supprimerVisiteur(string nom, string prenom)
         {
             try
             {
                 nom = chiffrage.Encrypt(nom);
+                prenom = chiffrage.Encrypt(prenom);
 
-                string requete = "DELETE FROM Visiteur WHERE nom = '" + nom + "'";
+                string requete = "DELETE FROM Visiteur WHERE nom = '" + nom + "' AND prenom = '" + prenom + "'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 cmd.ExecuteNonQuery();
@@ -380,16 +406,50 @@ namespace AppCasier
             }
         }
 
-        public bool verifyVisiteur(string nom,string prenom,string compagnie,string plaque)
+        public bool supprimerUtilisateur(string login)
+        {
+            try
+            {
+                login = chiffrage.Encrypt(login);
+
+                string requete = "DELETE FROM Utilisateur WHERE login = '" + login + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la suppression de l'utilisateur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool supprimerTag(string tag)
+        {
+            try
+            {
+                string requete = "DELETE FROM Tag WHERE tag = '" + tag + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la suppression du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool verifyVisiteur(string nom, string prenom)
         {
             try
             {
                 nom = chiffrage.Encrypt(nom);
                 prenom = chiffrage.Encrypt(prenom);
-                compagnie = chiffrage.Encrypt(compagnie);
-                plaque = chiffrage.Encrypt(plaque);
 
-                string requete = "SELECT * FROM Visiteur WHERE nom = '" + nom + "' AND prenom = '" + prenom + "' AND compagnie = '" + compagnie + "' AND numPlaque = '" + plaque + "'";
+                string requete = "SELECT * FROM Visiteur WHERE nom = '" + nom + "' AND prenom = '" + prenom + "'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -408,36 +468,6 @@ namespace AppCasier
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de la vérification du visiteur : " + ex.Message);
-                return false;
-            }
-        }
-
-        public bool verifyUtilisateur(string login,string pass, string role)
-        {
-            try
-            {
-                login = chiffrage.Encrypt(login);
-                pass = chiffrage.Encrypt(pass);
-
-                string requete = "SELECT * FROM Utilisateur WHERE login = '" + login + "' AND password = '" + pass + "' AND role = '" + role + "'";
-
-                MySqlCommand cmd = new MySqlCommand(requete, connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    reader.Close();
-                    return true;
-                }
-                else
-                {
-                    reader.Close();
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors de la vérification de l'utilisateur : " + ex.Message);
                 return false;
             }
         }

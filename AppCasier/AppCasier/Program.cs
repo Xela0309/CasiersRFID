@@ -21,8 +21,8 @@ namespace AppCasier
 
 
 
-            MainForm main = new MainForm();
-
+        MainForm main = new MainForm();
+            
             new Connexion(main);
 
             if (main.GetLogin() == "")

@@ -12,32 +12,48 @@ namespace AppCasier
 {
     public partial class pageSupprVisiteur : Form
     {
-        DatabaseConnection db = new DatabaseConnection();
+        DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
         public pageSupprVisiteur()
         {
             InitializeComponent();
             affichageVisiteur();
         }
 
-        private void btSuppr_Click(object sender, EventArgs e)
-        {
-            string nom = cbVisiteur.Text;
-            db.supprVisiteur(nom);
-            MessageBox.Show("Le visiteur a bien été supprimé");
-            this.Close();
-        }
-
         private void affichageVisiteur()
         {
-            // Requête SQL pour récupérer les visiteurs de la base de données dans une liste
-            string[] liste = db.recupNomVisiteurNonAffecté();
+            db.OpenConnection();
 
-            for (int i = 0; i < liste.Length; i++)
+            // Récupération des visiteurs
+            string[] visiteurs = db.recupNomPrenomVisiteurNonAffecté();
+            // Ajout des visiteurs dans la liste
+
+            if (visiteurs != null)
             {
-                cbVisiteur.Items.Add(liste[i]);
+                for (int i = 0; i < visiteurs.Length; i++)
+                {
+                    cbVisiteur.Items.Add(visiteurs[i]);
+                }
             }
 
+        }
 
+        private void btSuppr_Click(object sender, EventArgs e)
+        {
+            // Recuperer le nom du visiteur et son prenom
+            string[] nomPrenom = cbVisiteur.Text.Split(' ');
+            string nom = nomPrenom[0];
+            string prenom = nomPrenom[1];
+
+            // Supprimer le visiteur
+            if (db.supprimerVisiteur(nom, prenom))
+            {
+                MessageBox.Show("Visiteur supprimé !");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de la suppression du visiteur !");
+            }
 
         }
     }

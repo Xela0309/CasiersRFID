@@ -35,18 +35,16 @@ namespace AppCasier
                 Text = "☰",
                 Font = new Font("Arial", 14, FontStyle.Bold),
                 Size = new Size(50, 40),
-                Location = new Point(0, 0),
+                Location = new Point(10, 10),
                 BackColor = Color.Gray,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
-
             };
-            btnHamburger.BringToFront();
             btnHamburger.Click += (s, e) => ToggleMenu();
             form.Controls.Add(btnHamburger);
 
             // Boutons du menu
-            string[] menuItems = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Suprimmer Visiteur", "Supprimer Tag" };
+            string[] menuItems = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag" };
             int yOffset = 10;
 
             foreach (string item in menuItems)
@@ -113,6 +111,24 @@ namespace AppCasier
             {
                 // Ouvrir la page d'ajout de tag
                 PageAjoutTag page = new PageAjoutTag();
+                page.ShowDialog();
+            }
+            else if (menuItem == "Supprimer Utilisateur")
+            {
+                // Ouvrir la page de suppression d'utilisateur
+                pageSupprUtilisateur page = new pageSupprUtilisateur();
+                page.ShowDialog();
+            }
+            else if (menuItem == "Supprimer Visiteur")
+            {
+                // Ouvrir la page de suppression de visiteur
+                pageSupprVisiteur page = new pageSupprVisiteur();
+                page.ShowDialog();
+            }
+            else if (menuItem == "Supprimer Tag")
+            {
+                // Ouvrir la page de suppression de tag
+                pageSupprTag page = new pageSupprTag();
                 page.ShowDialog();
             }
             else

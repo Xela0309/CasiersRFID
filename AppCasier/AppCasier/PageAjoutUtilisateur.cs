@@ -27,9 +27,6 @@ namespace AppCasier
             {
                 DatabaseConnection db = new DatabaseConnection();
                 db.OpenConnection();
-
-                //if 
-
                 if (db.ajouterUtilisateur(tbLogin.Text, tbPassword.Text, cbRole.Text))
                 {
                     MessageBox.Show("Utilisateur ajouté avec succès");

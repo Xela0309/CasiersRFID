@@ -5,11 +5,11 @@ namespace AppCasier
 {
     public class ChiffrageXOR
     {
-        private byte[] m_key; // Clé générée à partir du mot de passe
+        private byte[] _key; // Clé générée à partir du mot de passe
 
         public ChiffrageXOR(string password)
         {
-            m_key = GenerateKey(password, 256); // Génération de la clé à partir du mot de passe
+            _key = GenerateKey(password, 256); // Génération de la clé à partir du mot de passe
         }
 
         // 🔹 Génère une clé pseudo-aléatoire basée sur un mot de passe (PRNG)
@@ -39,7 +39,7 @@ namespace AppCasier
 
             for (int i = 0; i < inputBytes.Length; i++)
             {
-                outputBytes[i] = (byte)(inputBytes[i] ^ m_key[i % m_key.Length]); // XOR avec la clé
+                outputBytes[i] = (byte)(inputBytes[i] ^ _key[i % _key.Length]); // XOR avec la clé
             }
 
             return BytesToHex(outputBytes); // Encodage en Hexadécimal
@@ -52,9 +52,8 @@ namespace AppCasier
             byte[] outputBytes = new byte[inputBytes.Length];
 
             for (int i = 0; i < inputBytes.Length; i++)
-
             {
-                outputBytes[i] = (byte)(inputBytes[i] ^ m_key[i % m_key.Length]); // XOR avec la clé
+                outputBytes[i] = (byte)(inputBytes[i] ^ _key[i % _key.Length]); // XOR avec la clé
             }
 
             return Encoding.UTF8.GetString(outputBytes);

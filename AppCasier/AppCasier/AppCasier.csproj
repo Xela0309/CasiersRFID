@@ -112,6 +112,12 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="logout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logout.Designer.cs">
+      <DependentUpon>logout.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuHamburger.cs" />
     <Compile Include="PageAjoutTag.cs">
       <SubType>Form</SubType>

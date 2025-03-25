@@ -25,11 +25,10 @@ namespace AppCasier
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cbAffectationTag = new System.Windows.Forms.ComboBox();
             this.cbAffectationNom = new System.Windows.Forms.ComboBox();
             this.cbAffectationCasier = new System.Windows.Forms.ComboBox();
-            this.listBoxAffectation = new System.Windows.Forms.ListBox();
-            this.lbListeAffectation = new System.Windows.Forms.Label();
             this.gpbAffectation = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,10 +37,12 @@ namespace AppCasier
             this.btAffectation = new System.Windows.Forms.Button();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
             this.dtpDateDeb = new System.Windows.Forms.DateTimePicker();
-            this.lbConnctedTo = new System.Windows.Forms.Label();
             this.lbLoginActuel = new System.Windows.Forms.Label();
-            this.btLogout = new System.Windows.Forms.Button();
+            this.lbListeAffectation = new System.Windows.Forms.Label();
+            this.listBoxAffectation = new System.Windows.Forms.ListBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.gpbAffectation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // cbAffectationTag
@@ -68,25 +69,6 @@ namespace AppCasier
             this.cbAffectationCasier.Size = new System.Drawing.Size(121, 21);
             this.cbAffectationCasier.TabIndex = 8;
             // 
-            // listBoxAffectation
-            // 
-            this.listBoxAffectation.FormattingEnabled = true;
-            this.listBoxAffectation.Location = new System.Drawing.Point(82, 72);
-            this.listBoxAffectation.Name = "listBoxAffectation";
-            this.listBoxAffectation.Size = new System.Drawing.Size(119, 121);
-            this.listBoxAffectation.TabIndex = 9;
-            this.listBoxAffectation.Click += new System.EventHandler(this.clickListeAffectation);
-            // 
-            // lbListeAffectation
-            // 
-            this.lbListeAffectation.AutoSize = true;
-            this.lbListeAffectation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListeAffectation.Location = new System.Drawing.Point(9, 50);
-            this.lbListeAffectation.Name = "lbListeAffectation";
-            this.lbListeAffectation.Size = new System.Drawing.Size(273, 13);
-            this.lbListeAffectation.TabIndex = 10;
-            this.lbListeAffectation.Text = "Liste des casiers occupé par une Affecttation :";
-            // 
             // gpbAffectation
             // 
             this.gpbAffectation.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -100,7 +82,7 @@ namespace AppCasier
             this.gpbAffectation.Controls.Add(this.cbAffectationNom);
             this.gpbAffectation.Controls.Add(this.cbAffectationCasier);
             this.gpbAffectation.Controls.Add(this.cbAffectationTag);
-            this.gpbAffectation.Location = new System.Drawing.Point(11, 219);
+            this.gpbAffectation.Location = new System.Drawing.Point(12, 191);
             this.gpbAffectation.Name = "gpbAffectation";
             this.gpbAffectation.Size = new System.Drawing.Size(494, 224);
             this.gpbAffectation.TabIndex = 12;
@@ -171,54 +153,63 @@ namespace AppCasier
             this.dtpDateDeb.Size = new System.Drawing.Size(193, 20);
             this.dtpDateDeb.TabIndex = 9;
             // 
-            // lbConnctedTo
-            // 
-            this.lbConnctedTo.AutoSize = true;
-            this.lbConnctedTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConnctedTo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbConnctedTo.Location = new System.Drawing.Point(369, 50);
-            this.lbConnctedTo.Name = "lbConnctedTo";
-            this.lbConnctedTo.Size = new System.Drawing.Size(138, 13);
-            this.lbConnctedTo.TabIndex = 13;
-            this.lbConnctedTo.Text = "Connecté en tant que :";
-            // 
             // lbLoginActuel
             // 
             this.lbLoginActuel.AutoSize = true;
-            this.lbLoginActuel.BackColor = System.Drawing.SystemColors.Info;
             this.lbLoginActuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoginActuel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbLoginActuel.Location = new System.Drawing.Point(387, 72);
+            this.lbLoginActuel.ForeColor = System.Drawing.Color.Blue;
+            this.lbLoginActuel.Location = new System.Drawing.Point(436, 9);
             this.lbLoginActuel.Name = "lbLoginActuel";
             this.lbLoginActuel.Size = new System.Drawing.Size(34, 13);
             this.lbLoginActuel.TabIndex = 14;
             this.lbLoginActuel.Text = "login";
             // 
-            // btLogout
+            // lbListeAffectation
             // 
-            this.btLogout.Location = new System.Drawing.Point(390, 135);
-            this.btLogout.Name = "btLogout";
-            this.btLogout.Size = new System.Drawing.Size(61, 48);
-            this.btLogout.TabIndex = 15;
-            this.btLogout.Text = "Se déconnecter";
-            this.btLogout.UseVisualStyleBackColor = true;
-            this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
+            this.lbListeAffectation.AutoSize = true;
+            this.lbListeAffectation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbListeAffectation.Location = new System.Drawing.Point(12, 86);
+            this.lbListeAffectation.Name = "lbListeAffectation";
+            this.lbListeAffectation.Size = new System.Drawing.Size(273, 13);
+            this.lbListeAffectation.TabIndex = 10;
+            this.lbListeAffectation.Text = "Liste des casiers occupé par une Affecttation :";
+            // 
+            // listBoxAffectation
+            // 
+            this.listBoxAffectation.FormattingEnabled = true;
+            this.listBoxAffectation.Location = new System.Drawing.Point(300, 47);
+            this.listBoxAffectation.Name = "listBoxAffectation";
+            this.listBoxAffectation.Size = new System.Drawing.Size(119, 121);
+            this.listBoxAffectation.TabIndex = 9;
+            this.listBoxAffectation.Click += new System.EventHandler(this.clickListeAffectation);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(486, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(31, 33);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 15;
+            this.pbLogo.TabStop = false;
             // 
             // MainForm
             // 
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(519, 450);
-            this.Controls.Add(this.btLogout);
+            this.ClientSize = new System.Drawing.Size(520, 419);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lbListeAffectation);
             this.Controls.Add(this.listBoxAffectation);
             this.Controls.Add(this.lbLoginActuel);
-            this.Controls.Add(this.lbConnctedTo);
             this.Controls.Add(this.gpbAffectation);
             this.Name = "MainForm";
             this.Text = "AppCasier";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Click += new System.EventHandler(this.FermetureMenuHamburger);
             this.gpbAffectation.ResumeLayout(false);
             this.gpbAffectation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,18 +218,17 @@ namespace AppCasier
         private ComboBox cbAffectationTag;
         private ComboBox cbAffectationNom;
         private ComboBox cbAffectationCasier;
-        private ListBox listBoxAffectation;
-        private Label lbListeAffectation;
         private GroupBox gpbAffectation;
         private Label lbAffectation;
         private Button btAffectation;
         private DateTimePicker dtpDateFin;
         private DateTimePicker dtpDateDeb;
-        private Label lbConnctedTo;
         private Label lbLoginActuel;
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button btLogout;
+        private Label lbListeAffectation;
+        private ListBox listBoxAffectation;
+        private PictureBox pbLogo;
     }
 }

@@ -36,18 +36,21 @@ namespace AppCasier
                     MessageBox.Show("La plaque doit être sous la forme AA-123-BB !");
                     return;
                 }
-                // Ajouter le visiteur à la base de données
+                else if (db.verifyVisiteur(tbNom.Text, tbPrenom.Text))
+                {
+                    MessageBox.Show("Le visiteur existe déjà !");
+                    return;
+                }
+                else
+                {
+                    db.OpenConnection();
+                    db.ajouterVisiteur(tbNom.Text, tbPrenom.Text, tbPlaque.Text, tbCompagnie.Text);
+                    MessageBox.Show("Visiteur ajouté avec succès !");
+                    this.Close();
+                    // Mettre à jour l'affichage
+                    mainform.Maj_Affichage();
 
-                db.OpenConnection();
-
-                db.ajouterVisiteur(tbNom.Text, tbPrenom.Text,tbPlaque.Text, tbCompagnie.Text);
-                MessageBox.Show("Visiteur ajouté avec succès !");
-                this.Close();
-
-                // Mettre à jour l'affichage
-
-
-                mainform.Maj_Affichage();
+                }
             }
         }
     }
