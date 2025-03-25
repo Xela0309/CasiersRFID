@@ -50,3 +50,6 @@ C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\MySqlConnect
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageAffichageInterface.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageAjoutUtilisateur.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.PageAjoutVisiteur.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprTag.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprUtilisateur.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprVisiteur.resources

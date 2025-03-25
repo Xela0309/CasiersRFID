@@ -22,7 +22,7 @@ namespace AppCasier
                 Application.Exit();
             }
             else if (role == "admin")
-            { 
+            {
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 InitializeComponent();
                 afficherAffectation(); // Afficher les affectations
@@ -108,7 +108,7 @@ namespace AppCasier
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
 
             // Afficher les détails de l'affectation
-            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation,this);
+            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation, this);
             pageAffichage.ShowDialog();
 
         }
@@ -204,7 +204,7 @@ namespace AppCasier
             this.lbLoginActuel.Text = login;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void btLogout_Click(object sender, EventArgs e)
         {
 
         }

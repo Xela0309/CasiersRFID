@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using System.Windows.Forms;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
 
@@ -72,33 +73,6 @@ namespace AppCasier
 
             }
         }
-
-        // Lire des données depuis la base
-        /* ------Exemple de lecture de données------
-        public void ReadData()
-        {
-            try
-            {
-                string query = "SELECT id_Visiteur,nom , prenom FROM Visiteur";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                //  Afficher les données
-                while (reader.Read())
-                {
-                    Console.WriteLine("Nom : " + reader[0] + " Prenom : " + reader[1]);
-                }
-
-
-
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erreur lors de la lecture des données : " + ex.Message);
-            }
-        }
-        */
 
         public bool estUtilisateur(string login, string pass)
         {
@@ -383,6 +357,87 @@ namespace AppCasier
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de l'ajout du visiteur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool supprVisiteur(string nom)
+        {
+            try
+            {
+                nom = chiffrage.Encrypt(nom);
+
+                string requete = "DELETE FROM Visiteur WHERE nom = '" + nom + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la suppression du visiteur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool verifyVisiteur(string nom,string prenom,string compagnie,string plaque)
+        {
+            try
+            {
+                nom = chiffrage.Encrypt(nom);
+                prenom = chiffrage.Encrypt(prenom);
+                compagnie = chiffrage.Encrypt(compagnie);
+                plaque = chiffrage.Encrypt(plaque);
+
+                string requete = "SELECT * FROM Visiteur WHERE nom = '" + nom + "' AND prenom = '" + prenom + "' AND compagnie = '" + compagnie + "' AND numPlaque = '" + plaque + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    reader.Close();
+                    return true;
+                }
+                else
+                {
+                    reader.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la vérification du visiteur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool verifyUtilisateur(string login,string pass, string role)
+        {
+            try
+            {
+                login = chiffrage.Encrypt(login);
+                pass = chiffrage.Encrypt(pass);
+
+                string requete = "SELECT * FROM Utilisateur WHERE login = '" + login + "' AND password = '" + pass + "' AND role = '" + role + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    reader.Close();
+                    return true;
+                }
+                else
+                {
+                    reader.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la vérification de l'utilisateur : " + ex.Message);
                 return false;
             }
         }

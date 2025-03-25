@@ -35,11 +35,13 @@ namespace AppCasier
                 Text = "☰",
                 Font = new Font("Arial", 14, FontStyle.Bold),
                 Size = new Size(50, 40),
-                Location = new Point(10, 10),
+                Location = new Point(0, 0),
                 BackColor = Color.Gray,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat
+
             };
+            btnHamburger.BringToFront();
             btnHamburger.Click += (s, e) => ToggleMenu();
             form.Controls.Add(btnHamburger);
 
