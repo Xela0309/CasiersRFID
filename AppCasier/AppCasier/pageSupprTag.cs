@@ -16,6 +16,7 @@ namespace AppCasier
         MainForm mainform;
         public pageSupprTag(MainForm form)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
             db.OpenConnection();
             mainform = form;

@@ -16,6 +16,7 @@ namespace AppCasier
         DatabaseConnection db = new DatabaseConnection();   
         public pageSupprUtilisateur()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
             db.OpenConnection();
             affichageUtiisateur();

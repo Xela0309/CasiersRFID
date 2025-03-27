@@ -18,12 +18,7 @@ namespace AppCasier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-
-
-        MainForm main = new MainForm();
-            
-            new Connexion(main);
+            MainForm main = new MainForm();
 
             if (main.GetLogin() == "")
             {

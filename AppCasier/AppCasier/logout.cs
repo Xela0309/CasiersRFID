@@ -15,8 +15,10 @@ namespace AppCasier
         MainForm mainform;
         public logout(MainForm form)
         {
-            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             mainform = form;
+            mainform.FermetureMenu();
+            InitializeComponent();
             affichageInfo();
         }
         private void affichageInfo()
@@ -31,6 +33,16 @@ namespace AppCasier
             {
                 lbRole.Text = "Utilisateur";
             }
+        }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            mainform.SetLogin("");
+            mainform.SetRole("");
+            Connexion connexion = new Connexion(mainform);
+            connexion.ShowDialog();
+            this.Close();
+            mainform.affichageGeneral();
         }
     }
 }

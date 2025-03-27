@@ -37,7 +37,6 @@ namespace AppCasier
             this.btAffectation = new System.Windows.Forms.Button();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
             this.dtpDateDeb = new System.Windows.Forms.DateTimePicker();
-            this.lbLoginActuel = new System.Windows.Forms.Label();
             this.lbListeAffectation = new System.Windows.Forms.Label();
             this.listBoxAffectation = new System.Windows.Forms.ListBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -82,7 +81,7 @@ namespace AppCasier
             this.gpbAffectation.Controls.Add(this.cbAffectationNom);
             this.gpbAffectation.Controls.Add(this.cbAffectationCasier);
             this.gpbAffectation.Controls.Add(this.cbAffectationTag);
-            this.gpbAffectation.Location = new System.Drawing.Point(12, 191);
+            this.gpbAffectation.Location = new System.Drawing.Point(12, 183);
             this.gpbAffectation.Name = "gpbAffectation";
             this.gpbAffectation.Size = new System.Drawing.Size(494, 224);
             this.gpbAffectation.TabIndex = 12;
@@ -154,22 +153,11 @@ namespace AppCasier
             this.dtpDateDeb.Size = new System.Drawing.Size(193, 20);
             this.dtpDateDeb.TabIndex = 9;
             // 
-            // lbLoginActuel
-            // 
-            this.lbLoginActuel.AutoSize = true;
-            this.lbLoginActuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoginActuel.ForeColor = System.Drawing.Color.Blue;
-            this.lbLoginActuel.Location = new System.Drawing.Point(436, 9);
-            this.lbLoginActuel.Name = "lbLoginActuel";
-            this.lbLoginActuel.Size = new System.Drawing.Size(34, 13);
-            this.lbLoginActuel.TabIndex = 14;
-            this.lbLoginActuel.Text = "login";
-            // 
             // lbListeAffectation
             // 
             this.lbListeAffectation.AutoSize = true;
             this.lbListeAffectation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListeAffectation.Location = new System.Drawing.Point(12, 86);
+            this.lbListeAffectation.Location = new System.Drawing.Point(21, 96);
             this.lbListeAffectation.Name = "lbListeAffectation";
             this.lbListeAffectation.Size = new System.Drawing.Size(273, 13);
             this.lbListeAffectation.TabIndex = 10;
@@ -189,9 +177,9 @@ namespace AppCasier
             // 
             this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
-            this.pbLogo.Location = new System.Drawing.Point(486, 0);
+            this.pbLogo.Location = new System.Drawing.Point(461, 2);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(31, 33);
+            this.pbLogo.Size = new System.Drawing.Size(55, 58);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;
@@ -200,11 +188,10 @@ namespace AppCasier
             // MainForm
             // 
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(520, 419);
+            this.ClientSize = new System.Drawing.Size(518, 416);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lbListeAffectation);
             this.Controls.Add(this.listBoxAffectation);
-            this.Controls.Add(this.lbLoginActuel);
             this.Controls.Add(this.gpbAffectation);
             this.Name = "MainForm";
             this.Text = "AppCasier";
@@ -226,7 +213,6 @@ namespace AppCasier
         private Button btAffectation;
         private DateTimePicker dtpDateFin;
         private DateTimePicker dtpDateDeb;
-        private Label lbLoginActuel;
         private Label label3;
         private Label label2;
         private Label label1;

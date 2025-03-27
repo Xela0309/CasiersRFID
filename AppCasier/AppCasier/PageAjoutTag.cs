@@ -14,6 +14,7 @@ namespace AppCasier
     {
         public PageAjoutTag(MainForm form)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
         }
     }

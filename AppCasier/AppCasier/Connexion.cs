@@ -17,6 +17,7 @@ namespace AppCasier
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
         public Connexion(MainForm form)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
             mainForm = form;
             if (db.OpenConnection() == false)

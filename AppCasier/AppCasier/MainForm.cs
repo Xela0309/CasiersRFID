@@ -15,6 +15,7 @@ namespace AppCasier
 
         public MainForm()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             OpenConnexion(); // Ouvrir Page de Connexion
             if (login == "") // Si l'utilisateur n'est pas connecté
             {
@@ -22,18 +23,22 @@ namespace AppCasier
                 Application.Exit();
             }
             else
-            { 
+            {
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
-                InitializeComponent();
-                afficherAffectation(); // Afficher les affectations
-                affichageSelection();
-                afficherLogin(); // Afficher le login de l'utilisateur
-                menu.InitializeHamburgerMenu(this); // Initialiser le menu
-                menu.SetMainForm(this); // Mettre à jour le formulaire principal
+                affichageGeneral();
             }
         }
 
         // Ouvrir Page de Connexion
+
+        public void affichageGeneral()
+        {
+            InitializeComponent();
+            afficherAffectation(); // Afficher les affectations
+            affichageSelection();
+            menu.InitializeHamburgerMenu(this); // Initialiser le menu
+            menu.SetMainForm(this); // Mettre à jour le formulaire principal
+        }
         private void OpenConnexion()
         {
             Connexion connexion = new Connexion(this);
@@ -153,11 +158,7 @@ namespace AppCasier
                     MessageBox.Show("La date de début doit être inférieure à la date de fin !");
                     return;
                 }
-                else if (dtpDateDeb.Value < DateTime.Now)
-                {
-                    MessageBox.Show("La date de début ne doit pas être inférieure à la date actuelle !");
-                    return;
-                }
+
                 else
                 {
                     if (dtpDateDeb.Value < DateTime.Now)
@@ -195,9 +196,10 @@ namespace AppCasier
             menu.menuTimer.Start();
         }
 
-        private void afficherLogin()
+        public void FermetureMenu()
         {
-            this.lbLoginActuel.Text = login;
+            menu.menuOpen = false;
+            menu.menuTimer.Start();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

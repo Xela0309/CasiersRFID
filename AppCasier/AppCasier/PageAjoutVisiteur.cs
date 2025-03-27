@@ -16,9 +16,9 @@ namespace AppCasier
         DatabaseConnection db = new DatabaseConnection();
         public PageAjoutVisiteur(MainForm form)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             mainform = form;
             InitializeComponent();
-
         }
 
         private void btCreerVisiteur_Click(object sender, EventArgs e)

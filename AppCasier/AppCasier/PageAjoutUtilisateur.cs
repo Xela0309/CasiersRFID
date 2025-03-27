@@ -16,6 +16,7 @@ namespace AppCasier
 
         public PageAjoutUtilisateur()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
             db.OpenConnection();
         }

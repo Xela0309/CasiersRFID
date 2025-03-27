@@ -18,6 +18,7 @@ namespace AppCasier
         MainForm mainForm;
         public PageAffichageInterface(string[] detailsAffectation,MainForm form)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
             AffichageInfo(detailsAffectation);
             mainForm = form;

@@ -76,6 +76,7 @@
             this.btLogout.TabIndex = 3;
             this.btLogout.Text = "Se déconnecter";
             this.btLogout.UseVisualStyleBackColor = true;
+            this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
             // logout
             // 
@@ -90,7 +91,7 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "logout";
-            this.Text = "logout";
+            this.Text = "Information Personnelle";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
