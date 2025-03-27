@@ -21,7 +21,7 @@ namespace AppCasier
                 // Fermer l'application
                 Application.Exit();
             }
-            else if (role == "admin")
+            else
             { 
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 InitializeComponent();
@@ -30,15 +30,6 @@ namespace AppCasier
                 afficherLogin(); // Afficher le login de l'utilisateur
                 menu.InitializeHamburgerMenu(this); // Initialiser le menu
                 menu.SetMainForm(this); // Mettre à jour le formulaire principal
-
-            }
-            else
-            {
-                db.OpenConnection(); // Ouvrir la connexion à la base de données
-                InitializeComponent();
-                afficherAffectation(); // Afficher les affectations
-                affichageSelection();
-                afficherLogin(); // Afficher le login de l'utilisateur
             }
         }
 
@@ -162,6 +153,11 @@ namespace AppCasier
                     MessageBox.Show("La date de début doit être inférieure à la date de fin !");
                     return;
                 }
+                else if (dtpDateDeb.Value < DateTime.Now)
+                {
+                    MessageBox.Show("La date de début ne doit pas être inférieure à la date actuelle !");
+                    return;
+                }
                 else
                 {
                     if (dtpDateDeb.Value < DateTime.Now)
@@ -195,11 +191,8 @@ namespace AppCasier
 
         private void FermetureMenuHamburger(object sender, EventArgs e)
         {
-            if (role == "admin")
-            {
-                menu.menuOpen = false;
-                menu.menuTimer.Start();
-            }
+            menu.menuOpen = false;
+            menu.menuTimer.Start();
         }
 
         private void afficherLogin()
@@ -210,6 +203,12 @@ namespace AppCasier
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            logout logout = new logout(this);
+            logout.ShowDialog();
         }
     }
 }

@@ -105,3 +105,7 @@ C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.c
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.csproj.CopyComplete
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.exe
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.pdb
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprTag.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprUtilisateur.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprVisiteur.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.logout.resources

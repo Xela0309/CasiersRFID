@@ -12,7 +12,7 @@ namespace AppCasier
 {
     public partial class PageAjoutTag : Form
     {
-        public PageAjoutTag()
+        public PageAjoutTag(MainForm form)
         {
             InitializeComponent();
         }

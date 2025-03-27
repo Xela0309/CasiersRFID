@@ -14,6 +14,9 @@ namespace AppCasier
         public Timer menuTimer;
         private Panel menuPanel;
 
+        string[] menuItemsAdmin = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag" };
+        string[] menuItemsUser = { "Ajouter Visiteur", "Ajout Tag", "Supprimer Visiteur", "Supprimer Tag" };
+
         MainForm mainform;
         public MenuHamburger()
         {}
@@ -44,8 +47,18 @@ namespace AppCasier
             form.Controls.Add(btnHamburger);
 
             // Boutons du menu
-            string[] menuItems = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag" };
             int yOffset = 10;
+
+            string[] menuItems;
+
+            if (form.GetRole() == "admin")
+            {
+                menuItems = menuItemsAdmin;
+            }
+            else
+            {
+                menuItems = menuItemsUser;
+            }
 
             foreach (string item in menuItems)
             {
@@ -110,7 +123,7 @@ namespace AppCasier
             else if (menuItem == "Ajout Tag")
             {
                 // Ouvrir la page d'ajout de tag
-                PageAjoutTag page = new PageAjoutTag();
+                PageAjoutTag page = new PageAjoutTag(mainform);
                 page.ShowDialog();
             }
             else if (menuItem == "Supprimer Utilisateur")
@@ -122,13 +135,13 @@ namespace AppCasier
             else if (menuItem == "Supprimer Visiteur")
             {
                 // Ouvrir la page de suppression de visiteur
-                pageSupprVisiteur page = new pageSupprVisiteur();
+                pageSupprVisiteur page = new pageSupprVisiteur(mainform);
                 page.ShowDialog();
             }
             else if (menuItem == "Supprimer Tag")
             {
                 // Ouvrir la page de suppression de tag
-                pageSupprTag page = new pageSupprTag();
+                pageSupprTag page = new pageSupprTag(mainform);
                 page.ShowDialog();
             }
             else

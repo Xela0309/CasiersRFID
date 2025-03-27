@@ -386,6 +386,32 @@ namespace AppCasier
             }
         }
 
+        public string[] recupNomUtilisateur()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Utilisateur";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(chiffrage.Decrypt(reader[2].ToString()));
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des utilisateurs : " + ex.Message);
+                return null;
+            }
+        }
+
+
         public bool supprimerVisiteur(string nom, string prenom)
         {
             try
@@ -468,6 +494,34 @@ namespace AppCasier
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de la vérification du visiteur : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool verifyUtilisateur(string login)
+        {
+            try
+            {
+                login = chiffrage.Encrypt(login);
+                string requete = "SELECT * FROM Utilisateur WHERE login = '" + login + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    reader.Close();
+                    return true;
+                }
+                else
+                {
+                    reader.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la vérification de l'utilisateur : " + ex.Message);
                 return false;
             }
         }

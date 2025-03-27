@@ -12,9 +12,12 @@ namespace AppCasier
 {
     public partial class PageAjoutUtilisateur : Form
     {
+        DatabaseConnection db = new DatabaseConnection();
+
         public PageAjoutUtilisateur()
         {
             InitializeComponent();
+            db.OpenConnection();
         }
 
         private void btAccepter_Click(object sender, EventArgs e)
@@ -23,10 +26,14 @@ namespace AppCasier
             {
                 MessageBox.Show("Veuillez remplir tous les champs");
             }
+            else if (db.verifyUtilisateur(tbLogin.Text))
+            {
+                MessageBox.Show("L'Utilisateur existe déjà !");
+                return;
+            }
             else
             {
-                DatabaseConnection db = new DatabaseConnection();
-                db.OpenConnection();
+
                 if (db.ajouterUtilisateur(tbLogin.Text, tbPassword.Text, cbRole.Text))
                 {
                     MessageBox.Show("Utilisateur ajouté avec succès");

@@ -12,16 +12,18 @@ namespace AppCasier
 {
     public partial class pageSupprVisiteur : Form
     {
+        MainForm mainform;
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
-        public pageSupprVisiteur()
+        public pageSupprVisiteur(MainForm form)
         {
             InitializeComponent();
+            db.OpenConnection();
             affichageVisiteur();
+            mainform = form;
         }
 
         private void affichageVisiteur()
         {
-            db.OpenConnection();
 
             // Récupération des visiteurs
             string[] visiteurs = db.recupNomPrenomVisiteurNonAffecté();
@@ -49,6 +51,7 @@ namespace AppCasier
             {
                 MessageBox.Show("Visiteur supprimé !");
                 this.Close();
+                mainform.Maj_Affichage();
             }
             else
             {

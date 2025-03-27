@@ -68,6 +68,7 @@
             this.btSuppr.TabIndex = 4;
             this.btSuppr.Text = "Supprimer";
             this.btSuppr.UseVisualStyleBackColor = true;
+            this.btSuppr.Click += new System.EventHandler(this.btSuppr_Click);
             // 
             // pageSupprTag
             // 

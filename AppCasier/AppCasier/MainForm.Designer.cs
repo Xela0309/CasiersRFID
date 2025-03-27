@@ -128,6 +128,7 @@ namespace AppCasier
             this.lbAffectation.Size = new System.Drawing.Size(318, 13);
             this.lbAffectation.TabIndex = 11;
             this.lbAffectation.Text = "Selectionnez les éléments à ajouter dans l\'affectation :";
+            this.lbAffectation.Click += new System.EventHandler(this.FermetureMenuHamburger);
             // 
             // btAffectation
             // 
@@ -173,6 +174,7 @@ namespace AppCasier
             this.lbListeAffectation.Size = new System.Drawing.Size(273, 13);
             this.lbListeAffectation.TabIndex = 10;
             this.lbListeAffectation.Text = "Liste des casiers occupé par une Affecttation :";
+            this.lbListeAffectation.Click += new System.EventHandler(this.FermetureMenuHamburger);
             // 
             // listBoxAffectation
             // 
@@ -193,6 +195,7 @@ namespace AppCasier
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // MainForm
             // 

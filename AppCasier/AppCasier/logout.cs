@@ -12,9 +12,25 @@ namespace AppCasier
 {
     public partial class logout : Form
     {
-        public logout()
+        MainForm mainform;
+        public logout(MainForm form)
         {
             InitializeComponent();
+            mainform = form;
+            affichageInfo();
+        }
+        private void affichageInfo()
+        {
+            lbLogin.Text = mainform.GetLogin();
+
+            if (mainform.GetRole() == "admin")
+            {
+                lbRole.Text = "Administrateur";
+            }
+            else
+            {
+                lbRole.Text = "Utilisateur";
+            }
         }
     }
 }
