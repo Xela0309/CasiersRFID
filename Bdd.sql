@@ -4,11 +4,14 @@ DROP TABLE IF EXISTS Casier;
 DROP TABLE IF EXISTS Visiteur;
 DROP TABLE IF EXISTS Tag;
 
-
-
 CREATE TABLE Tag (
     tag VARCHAR(100) PRIMARY KEY NOT NULL 
+    etat Enum('O','U','P') NOT NULL,
 ) ENGINE = InnoDB;
+
+# O = occupée
+# U = utilisable
+# P = perdu
 
 CREATE TABLE Visiteur (
     id_Visiteur INT PRIMARY KEY AUTO_INCREMENT,
