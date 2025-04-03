@@ -19,8 +19,8 @@ INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ( "f4d6
 INSERT INTO `Visiteur`(`nom`, `prenom`, `compagnie`, `numPlaque`) VALUES ( "e1c629369a12","fec2333f8605", "e1c629369a1a21", "f5f96a60d74378d49f");
 
 
-INSERT INTO `Affectation`(`id_Casier`, `id_Visiteur`, `id_Tag`, `dateDebut`, `dateFin`) VALUES (1, 1, "[01][01][01][01][01]", "2020-01-01", "2020-01-02");
-INSERT INTO `Affectation`(`id_Casier`, `id_Visiteur`, `id_Tag`, `dateDebut`, `dateFin`) VALUES (2, 2, "[01][01][01][01][02]", "2020-01-01", "2020-01-02");
+INSERT INTO `Affectation`(`id_Casier`, `id_Visiteur`, `id_Tag`, `dateDebut`, `dateFin`) VALUES (1, 1, "010C2E14093E", "2020-01-01", "2020-01-02");
+INSERT INTO `Affectation`(`id_Casier`, `id_Visiteur`, `id_Tag`, `dateDebut`, `dateFin`) VALUES (2, 2, "2600B3271BA9", "2020-01-01", "2020-01-02");
 
 
 
