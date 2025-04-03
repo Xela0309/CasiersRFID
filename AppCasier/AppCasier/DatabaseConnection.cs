@@ -525,5 +525,81 @@ namespace AppCasier
                 return false;
             }
         }
+
+        public string[] affectationDateLimite()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Affectation WHERE dateFin < NOW()";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(reader[0].ToString());
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des affectations : " + ex.Message);
+                return null;
+            }
+        }
+
+        public string[] infoAffectation(string id)
+        {
+            try
+            {
+                string requete = "SELECT t.tag , v.nom , v.prenom , v.compagnie , v.numPlaque , c.numeroCasier , a.dateDebut , a.dateFin FROM Affectation a, Visiteur v , Tag t, Casier c WHERE a.id_Visiteur = v.id_Visiteur AND a.id_Tag = t.tag AND a.id_Casier = c.numeroCasier AND a.id_Affectation = '" + id + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+
+                string[] details = new string[8];
+                details[0] = reader[0].ToString();
+                details[1] = reader[1].ToString();
+                details[2] = reader[2].ToString();
+                details[3] = reader[3].ToString();
+                details[4] = reader[4].ToString();
+                details[5] = reader[5].ToString();
+                details[6] = reader[6].ToString();
+                details[7] = reader[7].ToString();
+
+
+
+
+                reader.Close();
+                return details;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des détails de l'affectation : " + ex.Message);
+                return null;
+            }
+        }
+
+        public bool ajouterTag(string tag)
+        {
+            try
+            {
+                string requete = "INSERT INTO Tag (tag,etat) VALUES ('" + tag + "','U')";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ajout du tag : " + ex.Message);
+                return false;
+            }
+        }
     }
 }

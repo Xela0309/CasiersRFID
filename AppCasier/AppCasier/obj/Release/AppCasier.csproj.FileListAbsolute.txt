@@ -109,3 +109,8 @@ C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pa
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprUtilisateur.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.pageSupprVisiteur.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.logout.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.verifDate.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\System.IO.Ports.dll
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\System.IO.Ports.xml
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.PageAjoutTag.resources
+C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.lectureTag.resources

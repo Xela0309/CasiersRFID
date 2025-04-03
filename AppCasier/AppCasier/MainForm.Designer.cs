@@ -195,7 +195,6 @@ namespace AppCasier
             this.Controls.Add(this.gpbAffectation);
             this.Name = "MainForm";
             this.Text = "AppCasier";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Click += new System.EventHandler(this.FermetureMenuHamburger);
             this.gpbAffectation.ResumeLayout(false);
             this.gpbAffectation.PerformLayout();

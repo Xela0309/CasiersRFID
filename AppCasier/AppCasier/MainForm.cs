@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 
@@ -26,6 +27,7 @@ namespace AppCasier
             {
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 affichageGeneral();
+                
             }
         }
 
@@ -38,6 +40,7 @@ namespace AppCasier
             affichageSelection();
             menu.InitializeHamburgerMenu(this); // Initialiser le menu
             menu.SetMainForm(this); // Mettre à jour le formulaire principal
+            affichageDatePasser();
         }
         private void OpenConnexion()
         {
@@ -202,15 +205,28 @@ namespace AppCasier
             menu.menuTimer.Start();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pbLogo_Click(object sender, EventArgs e)
         {
             logout logout = new logout(this);
             logout.ShowDialog();
+        }
+
+        private void affichageDatePasser()
+        {
+            // Recuperer les affectations
+            string[] affectation = db.affectationDateLimite();
+
+            // Parcourir les affectations
+            for (int i = 0; i < affectation.Length; i++)
+            {
+                // Recuperer les informations de l'affectation
+                string[] detailsAffectation = db.infoAffectation(affectation[i]);
+
+                // Afficher les informations de l'affectation
+                verifDate verifDate = new verifDate(detailsAffectation, this);
+                verifDate.ShowDialog();
+
+            }
         }
     }
 }
