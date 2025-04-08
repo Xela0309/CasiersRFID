@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageAjoutVisiteur));
             this.lbTitre = new System.Windows.Forms.Label();
             this.lbPrenom = new System.Windows.Forms.Label();
             this.lbPlaque = new System.Windows.Forms.Label();
@@ -39,6 +40,10 @@
             this.tbPrenom = new System.Windows.Forms.TextBox();
             this.lbPlaqueEx = new System.Windows.Forms.Label();
             this.btCreerVisiteur = new System.Windows.Forms.Button();
+            this.lbPays = new System.Windows.Forms.Label();
+            this.cbPays = new System.Windows.Forms.ComboBox();
+            this.pbPays = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPays)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitre
@@ -65,7 +70,7 @@
             // 
             this.lbPlaque.AutoSize = true;
             this.lbPlaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlaque.Location = new System.Drawing.Point(12, 188);
+            this.lbPlaque.Location = new System.Drawing.Point(12, 231);
             this.lbPlaque.Name = "lbPlaque";
             this.lbPlaque.Size = new System.Drawing.Size(54, 13);
             this.lbPlaque.TabIndex = 3;
@@ -100,7 +105,7 @@
             // 
             // tbPlaque
             // 
-            this.tbPlaque.Location = new System.Drawing.Point(102, 185);
+            this.tbPlaque.Location = new System.Drawing.Point(102, 228);
             this.tbPlaque.Name = "tbPlaque";
             this.tbPlaque.Size = new System.Drawing.Size(119, 20);
             this.tbPlaque.TabIndex = 7;
@@ -123,7 +128,7 @@
             // 
             this.lbPlaqueEx.AutoSize = true;
             this.lbPlaqueEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlaqueEx.Location = new System.Drawing.Point(123, 208);
+            this.lbPlaqueEx.Location = new System.Drawing.Point(123, 251);
             this.lbPlaqueEx.Name = "lbPlaqueEx";
             this.lbPlaqueEx.Size = new System.Drawing.Size(80, 13);
             this.lbPlaqueEx.TabIndex = 10;
@@ -131,7 +136,7 @@
             // 
             // btCreerVisiteur
             // 
-            this.btCreerVisiteur.Location = new System.Drawing.Point(113, 255);
+            this.btCreerVisiteur.Location = new System.Drawing.Point(113, 298);
             this.btCreerVisiteur.Name = "btCreerVisiteur";
             this.btCreerVisiteur.Size = new System.Drawing.Size(75, 23);
             this.btCreerVisiteur.TabIndex = 11;
@@ -139,11 +144,43 @@
             this.btCreerVisiteur.UseVisualStyleBackColor = true;
             this.btCreerVisiteur.Click += new System.EventHandler(this.btCreerVisiteur_Click);
             // 
+            // lbPays
+            // 
+            this.lbPays.AutoSize = true;
+            this.lbPays.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPays.Location = new System.Drawing.Point(12, 187);
+            this.lbPays.Name = "lbPays";
+            this.lbPays.Size = new System.Drawing.Size(42, 13);
+            this.lbPays.TabIndex = 12;
+            this.lbPays.Text = "Pays :";
+            // 
+            // cbPays
+            // 
+            this.cbPays.FormattingEnabled = true;
+            this.cbPays.Location = new System.Drawing.Point(102, 187);
+            this.cbPays.Name = "cbPays";
+            this.cbPays.Size = new System.Drawing.Size(119, 21);
+            this.cbPays.TabIndex = 13;
+            this.cbPays.SelectedIndexChanged += new System.EventHandler(this.ChangementPays);
+            // 
+            // pbPays
+            // 
+            this.pbPays.Image = ((System.Drawing.Image)(resources.GetObject("pbPays.Image")));
+            this.pbPays.Location = new System.Drawing.Point(236, 187);
+            this.pbPays.Name = "pbPays";
+            this.pbPays.Size = new System.Drawing.Size(28, 21);
+            this.pbPays.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPays.TabIndex = 14;
+            this.pbPays.TabStop = false;
+            // 
             // PageAjoutVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 292);
+            this.ClientSize = new System.Drawing.Size(313, 334);
+            this.Controls.Add(this.pbPays);
+            this.Controls.Add(this.cbPays);
+            this.Controls.Add(this.lbPays);
             this.Controls.Add(this.btCreerVisiteur);
             this.Controls.Add(this.lbPlaqueEx);
             this.Controls.Add(this.tbPrenom);
@@ -157,6 +194,7 @@
             this.Controls.Add(this.lbTitre);
             this.Name = "PageAjoutVisiteur";
             this.Text = "PageAjoutVisiteur";
+            ((System.ComponentModel.ISupportInitialize)(this.pbPays)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +213,8 @@
         private System.Windows.Forms.TextBox tbPrenom;
         private System.Windows.Forms.Label lbPlaqueEx;
         private System.Windows.Forms.Button btCreerVisiteur;
+        private System.Windows.Forms.Label lbPays;
+        private System.Windows.Forms.ComboBox cbPays;
+        private System.Windows.Forms.PictureBox pbPays;
     }
 }

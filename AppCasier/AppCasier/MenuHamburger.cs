@@ -18,8 +18,12 @@ namespace AppCasier
         string[] menuItemsUser = { "Ajouter Visiteur", "Ajout Tag", "Supprimer Visiteur", "Supprimer Tag" };
 
         MainForm mainform;
+        Lecteur lecteur = new Lecteur("COM8", 9600); // Port et vitesse de communication0
+
         public MenuHamburger()
-        {}
+        {
+            //lecteur.OpenPort(); // Ouvrir le port série
+        }
 
         public void InitializeHamburgerMenu(MainForm form)
         {
@@ -123,7 +127,7 @@ namespace AppCasier
             else if (menuItem == "Ajout Tag")
             {
                 // Ouvrir la page d'ajout de tag
-                PageAjoutTag page = new PageAjoutTag(mainform);
+                PageAjoutTag page = new PageAjoutTag(mainform,lecteur);
                 page.ShowDialog();
             }
             else if (menuItem == "Supprimer Utilisateur")

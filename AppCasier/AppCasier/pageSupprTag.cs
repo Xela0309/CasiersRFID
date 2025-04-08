@@ -36,17 +36,25 @@ namespace AppCasier
 
         private void btSuppr_Click(object sender, EventArgs e)
         {
-            string tag = cbTag.Text;
-            if (db.supprimerTag(tag))
+            if (cbTag.Text == "")
             {
-                MessageBox.Show("Tag supprimé !");
-                this.Close();
-                mainform.Maj_Affichage();
+                MessageBox.Show("Veuillez sélectionner un tag valide.");
+                return;
             }
             else
             {
-                MessageBox.Show("Erreur lors de la suppression du tag !");
+                if (db.supprimerTag(cbTag.Text))
+                {
+                    MessageBox.Show("Tag supprimé !");
+                    this.Close();
+                    mainform.Maj_Affichage();
+                }
+                else
+                {
+                    MessageBox.Show("Erreur lors de la suppression du tag !");
+                }
             }
+
         }
     }
 }

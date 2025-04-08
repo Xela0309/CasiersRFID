@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 //d2c72a3e81
 
@@ -455,7 +456,7 @@ namespace AppCasier
         {
             try
             {
-                string requete = "DELETE FROM Tag WHERE tag = '" + tag + "'";
+                string requete = "DELETE FROM Tag WHERE tag = '" + tag + "' AND etat = 'U'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 cmd.ExecuteNonQuery();
@@ -584,6 +585,60 @@ namespace AppCasier
                 return null;
             }
         }
+
+        public bool verifTag(string tag)
+        {
+            try
+            {
+                string requete = "SELECT * FROM Tag WHERE tag = '" + tag + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    reader.Close();
+                    return true;
+                }
+                else
+                {
+                    reader.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la vérification du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        //public bool verifTagU(string tag)
+        //{
+        //    try
+        //    {
+        //        string requete = "SELECT * FROM Tag WHERE tag = '" + tag + "' AND etat  = 'U' ";
+
+        //        MySqlCommand cmd = new MySqlCommand(requete, connection);
+        //        MySqlDataReader reader = cmd.ExecuteReader();
+
+        //        if (reader.Read())
+        //        {
+        //            reader.Close();
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            reader.Close();
+        //            return false;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Erreur lors de la vérification du tag : " + ex.Message);
+        //        return false;
+        //    }
+        //}
 
         public bool ajouterTag(string tag)
         {

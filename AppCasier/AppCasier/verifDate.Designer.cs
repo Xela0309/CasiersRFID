@@ -47,6 +47,7 @@
             this.lbAffectationPrenom = new System.Windows.Forms.Label();
             this.btInfoAffectationSupprimer = new System.Windows.Forms.Button();
             this.btInfoAffectationFermer = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -205,7 +206,7 @@
             // 
             // btInfoAffectationSupprimer
             // 
-            this.btInfoAffectationSupprimer.Location = new System.Drawing.Point(210, 265);
+            this.btInfoAffectationSupprimer.Location = new System.Drawing.Point(225, 265);
             this.btInfoAffectationSupprimer.Name = "btInfoAffectationSupprimer";
             this.btInfoAffectationSupprimer.Size = new System.Drawing.Size(75, 23);
             this.btInfoAffectationSupprimer.TabIndex = 20;
@@ -223,11 +224,21 @@
             this.btInfoAffectationFermer.UseVisualStyleBackColor = true;
             this.btInfoAffectationFermer.Click += new System.EventHandler(this.btInfoAffectationFermer_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(120, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Rendre perdu";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // verifDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 304);
+            this.ClientSize = new System.Drawing.Size(328, 304);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbAffectationCasierINFO);
             this.Controls.Add(this.lbAffectationCasier);
             this.Controls.Add(this.lbAffectationDateFinINFO);
@@ -275,5 +286,6 @@
         private System.Windows.Forms.Label lbAffectationPrenom;
         private System.Windows.Forms.Button btInfoAffectationSupprimer;
         private System.Windows.Forms.Button btInfoAffectationFermer;
+        private System.Windows.Forms.Button button1;
     }
 }

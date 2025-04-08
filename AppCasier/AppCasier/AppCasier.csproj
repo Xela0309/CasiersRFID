@@ -179,6 +179,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegexPays.cs" />
     <Compile Include="verifDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +227,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="verifDate.resx">
       <DependentUpon>verifDate.cs</DependentUpon>
@@ -243,6 +245,96 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\allemagne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\autriche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\belgique.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\bulgarie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\chypre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\croatie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\danemark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\drapeauxEU.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\espagne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\estonie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\finlande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\france.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\grece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\hongrie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\irlande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\italie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\lettonie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\lituanie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\luxembourg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\malte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\paysbas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\pologne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\portugal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\roumanie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\slovaquie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\slovenie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\suede.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\tchequie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\uk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\suisse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

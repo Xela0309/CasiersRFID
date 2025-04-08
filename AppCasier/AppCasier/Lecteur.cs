@@ -7,7 +7,7 @@ using System.IO.Ports;
 
 namespace AppCasier
 {
-    internal class Lecteur
+    public class Lecteur
     {
 
         private string m_tag = "";
@@ -23,13 +23,15 @@ namespace AppCasier
             m_baud = baud;
             m_SPort = new SerialPort(m_port, m_baud, Parity.None, 8, StopBits.One);
         }
-
+        
         public void OpenPort()
         {
             m_SPort.Open();
         }
         public void ClosePort()
         {
+            m_SPort.DataReceived -= eventDeLecture; // Détacher l'événement de lecture
+            m_SPort.Dispose(); // Libérer les ressources du port série
             m_SPort.Close();
         }
 
@@ -53,12 +55,25 @@ namespace AppCasier
             return m_tag;
         }
 
-        public void lireTag()
+        public void SetTag(string tag)
         {
+            m_tag = tag;
+        }
+        public bool lireTag()
+        {
+            int time = 0;
             while (m_tag == "")
             {
                 m_SPort.DataReceived += eventDeLecture;
+                Task.Delay(50).Wait(); // Attendre 50ms
+                time += 50;
+                if (time >= 5000) // Si le temps d'attente dépasse 5 secondes
+                {
+                    m_SPort.DataReceived -= eventDeLecture; // Détacher l'événement de lecture
+                    return false; // Retourner false si aucun tag n'est lu
+                }
             }
+            return true; // Retourner true si un tag est lu
         }
 
     }

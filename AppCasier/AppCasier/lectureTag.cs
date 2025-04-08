@@ -12,33 +12,34 @@ namespace AppCasier
 {
     public partial class lectureTag : Form
     {
-        Lecteur lecteur = new Lecteur("COM8", 9600); // Port et vitesse de communication
+        Lecteur m_lecteur;
 
-        public lectureTag()
+        public lectureTag(Lecteur lecteur)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // Empêcher le redimensionnement de la fenêtre
             InitializeComponent();
-        }
+            m_lecteur = lecteur;
 
-        public void lectureTagValide()
-        {
-            lecteur.OpenPort(); // Ouvrir le port série
-            lecteur.lireTag();
-            if (lecteur.GetTag() != "")
-            {
-                lbTag.Text = lecteur.GetTag(); // Afficher le tag lu dans le TextBox
-            }
-            
         }
 
         private void lectureTagValide(object sender, EventArgs e)
         {
-            lecteur.OpenPort(); // Ouvrir le port série
-            lecteur.lireTag();
-            if (lecteur.GetTag() != "")
+            
+            if (!m_lecteur.lireTag())
             {
-                lbTag.Text = lecteur.GetTag(); // Afficher le tag lu dans le TextBox
+                lbConfirmation.Visible = false; // Cacher le picto de tag
+                lbRefus.Text = "Tag non valide"; // Afficher le message d'erreur
             }
+            else
+            {
+                if (m_lecteur.GetTag() != "")
+                {
+                    lbTag.Text = m_lecteur.GetTag(); // Afficher le tag lu dans le TextBox
+                    lbConfirmation.Visible = true; // Afficher le picto de tag
+                }
+            }
+
         }
+
     }
 }
