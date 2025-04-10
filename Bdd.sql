@@ -18,7 +18,8 @@ CREATE TABLE Visiteur (
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
     compagnie VARCHAR(100) NOT NULL,
-    numPlaque VARCHAR(100) NOT NULL
+    numPlaque VARCHAR(100) NOT NULL,
+    pays VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Casier (
