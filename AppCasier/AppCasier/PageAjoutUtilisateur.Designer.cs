@@ -110,6 +110,7 @@
             "user"});
             this.cbRole.Location = new System.Drawing.Point(110, 146);
             this.cbRole.Name = "cbRole";
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.Size = new System.Drawing.Size(115, 21);
             this.cbRole.TabIndex = 7;
             // 

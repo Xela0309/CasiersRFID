@@ -22,7 +22,12 @@ namespace AppCasier
 
         public MenuHamburger()
         {
-            //lecteur.OpenPort(); // Ouvrir le port série
+            // Test pour voir si le lecteur est connecté
+            if (!lecteur.IsConnected())
+            {
+                MessageBox.Show("Le lecteur de carte n'est pas connecté");
+                return;
+            }
         }
 
         public void InitializeHamburgerMenu(MainForm form)
@@ -127,8 +132,17 @@ namespace AppCasier
             else if (menuItem == "Ajout Tag")
             {
                 // Ouvrir la page d'ajout de tag
-                PageAjoutTag page = new PageAjoutTag(mainform,lecteur);
-                page.ShowDialog();
+                // Vérifier si le lecteur est connecté
+                if (!lecteur.IsConnected())
+                {
+                    MessageBox.Show("Le lecteur de carte n'est pas connecté");
+                    return;
+                }
+                else
+                {
+                    PageAjoutTag page = new PageAjoutTag(mainform, lecteur);
+                    page.ShowDialog();
+                }
             }
             else if (menuItem == "Supprimer Utilisateur")
             {

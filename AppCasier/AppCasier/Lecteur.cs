@@ -10,8 +10,8 @@ namespace AppCasier
     public class Lecteur
     {
 
-        private string m_tag = "";
-        private string m_data = "";
+        private string m_tag = ""; // Tag lu par le lecteur
+    private string m_data = "";
         private string m_port;
         private int m_baud;
         private SerialPort m_SPort;
@@ -76,5 +76,19 @@ namespace AppCasier
             return true; // Retourner true si un tag est lu
         }
 
+        public bool IsConnected()
+        {
+            try
+            {
+                m_SPort.Open();
+                m_SPort.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur de connexion au lecteur : " + ex.Message);
+                return false;
+            }
+        }
     }
 }

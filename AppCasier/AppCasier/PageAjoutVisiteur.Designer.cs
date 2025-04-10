@@ -128,11 +128,11 @@
             // 
             this.lbPlaqueEx.AutoSize = true;
             this.lbPlaqueEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlaqueEx.Location = new System.Drawing.Point(123, 251);
+            this.lbPlaqueEx.Location = new System.Drawing.Point(110, 251);
             this.lbPlaqueEx.Name = "lbPlaqueEx";
-            this.lbPlaqueEx.Size = new System.Drawing.Size(80, 13);
+            this.lbPlaqueEx.Size = new System.Drawing.Size(25, 13);
             this.lbPlaqueEx.TabIndex = 10;
-            this.lbPlaqueEx.Text = "Ex : AA-123-BB";
+            this.lbPlaqueEx.Text = "Ex :";
             // 
             // btCreerVisiteur
             // 
@@ -156,6 +156,7 @@
             // 
             // cbPays
             // 
+            this.cbPays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPays.FormattingEnabled = true;
             this.cbPays.Location = new System.Drawing.Point(102, 187);
             this.cbPays.Name = "cbPays";

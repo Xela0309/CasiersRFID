@@ -48,11 +48,13 @@
             this.lbAffectationCasier = new System.Windows.Forms.Label();
             this.lbAffectationCasierINFO = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbAffectationPaysINFO = new System.Windows.Forms.Label();
+            this.lbAffectationPays = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btInfoAffectationFermer
             // 
-            this.btInfoAffectationFermer.Location = new System.Drawing.Point(22, 280);
+            this.btInfoAffectationFermer.Location = new System.Drawing.Point(22, 294);
             this.btInfoAffectationFermer.Name = "btInfoAffectationFermer";
             this.btInfoAffectationFermer.Size = new System.Drawing.Size(75, 23);
             this.btInfoAffectationFermer.TabIndex = 0;
@@ -62,7 +64,7 @@
             // 
             // btInfoAffectationSupprimer
             // 
-            this.btInfoAffectationSupprimer.Location = new System.Drawing.Point(217, 280);
+            this.btInfoAffectationSupprimer.Location = new System.Drawing.Point(217, 294);
             this.btInfoAffectationSupprimer.Name = "btInfoAffectationSupprimer";
             this.btInfoAffectationSupprimer.Size = new System.Drawing.Size(75, 23);
             this.btInfoAffectationSupprimer.TabIndex = 1;
@@ -101,7 +103,7 @@
             // lbAffectationCompagnie
             // 
             this.lbAffectationCompagnie.AutoSize = true;
-            this.lbAffectationCompagnie.Location = new System.Drawing.Point(21, 116);
+            this.lbAffectationCompagnie.Location = new System.Drawing.Point(22, 141);
             this.lbAffectationCompagnie.Name = "lbAffectationCompagnie";
             this.lbAffectationCompagnie.Size = new System.Drawing.Size(66, 13);
             this.lbAffectationCompagnie.TabIndex = 5;
@@ -110,7 +112,7 @@
             // lbAffectationPlaque
             // 
             this.lbAffectationPlaque.AutoSize = true;
-            this.lbAffectationPlaque.Location = new System.Drawing.Point(21, 140);
+            this.lbAffectationPlaque.Location = new System.Drawing.Point(22, 165);
             this.lbAffectationPlaque.Name = "lbAffectationPlaque";
             this.lbAffectationPlaque.Size = new System.Drawing.Size(46, 13);
             this.lbAffectationPlaque.TabIndex = 6;
@@ -119,7 +121,7 @@
             // lbAffectationTag
             // 
             this.lbAffectationTag.AutoSize = true;
-            this.lbAffectationTag.Location = new System.Drawing.Point(21, 165);
+            this.lbAffectationTag.Location = new System.Drawing.Point(22, 190);
             this.lbAffectationTag.Name = "lbAffectationTag";
             this.lbAffectationTag.Size = new System.Drawing.Size(32, 13);
             this.lbAffectationTag.TabIndex = 7;
@@ -128,7 +130,7 @@
             // lbAffectationDateDeb
             // 
             this.lbAffectationDateDeb.AutoSize = true;
-            this.lbAffectationDateDeb.Location = new System.Drawing.Point(21, 217);
+            this.lbAffectationDateDeb.Location = new System.Drawing.Point(22, 242);
             this.lbAffectationDateDeb.Name = "lbAffectationDateDeb";
             this.lbAffectationDateDeb.Size = new System.Drawing.Size(81, 13);
             this.lbAffectationDateDeb.TabIndex = 8;
@@ -137,7 +139,7 @@
             // lbAffectationDateFin
             // 
             this.lbAffectationDateFin.AutoSize = true;
-            this.lbAffectationDateFin.Location = new System.Drawing.Point(21, 240);
+            this.lbAffectationDateFin.Location = new System.Drawing.Point(22, 265);
             this.lbAffectationDateFin.Name = "lbAffectationDateFin";
             this.lbAffectationDateFin.Size = new System.Drawing.Size(65, 13);
             this.lbAffectationDateFin.TabIndex = 9;
@@ -164,7 +166,7 @@
             // lbAffectationCompagnieINFO
             // 
             this.lbAffectationCompagnieINFO.AutoSize = true;
-            this.lbAffectationCompagnieINFO.Location = new System.Drawing.Point(126, 116);
+            this.lbAffectationCompagnieINFO.Location = new System.Drawing.Point(127, 141);
             this.lbAffectationCompagnieINFO.Name = "lbAffectationCompagnieINFO";
             this.lbAffectationCompagnieINFO.Size = new System.Drawing.Size(144, 13);
             this.lbAffectationCompagnieINFO.TabIndex = 12;
@@ -173,7 +175,7 @@
             // lbAffectationPlaqueINFO
             // 
             this.lbAffectationPlaqueINFO.AutoSize = true;
-            this.lbAffectationPlaqueINFO.Location = new System.Drawing.Point(126, 140);
+            this.lbAffectationPlaqueINFO.Location = new System.Drawing.Point(127, 165);
             this.lbAffectationPlaqueINFO.Name = "lbAffectationPlaqueINFO";
             this.lbAffectationPlaqueINFO.Size = new System.Drawing.Size(124, 13);
             this.lbAffectationPlaqueINFO.TabIndex = 13;
@@ -182,7 +184,7 @@
             // lbAffectationTagINFO
             // 
             this.lbAffectationTagINFO.AutoSize = true;
-            this.lbAffectationTagINFO.Location = new System.Drawing.Point(126, 165);
+            this.lbAffectationTagINFO.Location = new System.Drawing.Point(127, 190);
             this.lbAffectationTagINFO.Name = "lbAffectationTagINFO";
             this.lbAffectationTagINFO.Size = new System.Drawing.Size(110, 13);
             this.lbAffectationTagINFO.TabIndex = 14;
@@ -191,7 +193,7 @@
             // lbAffectationDateDebINFO
             // 
             this.lbAffectationDateDebINFO.AutoSize = true;
-            this.lbAffectationDateDebINFO.Location = new System.Drawing.Point(126, 217);
+            this.lbAffectationDateDebINFO.Location = new System.Drawing.Point(127, 242);
             this.lbAffectationDateDebINFO.Name = "lbAffectationDateDebINFO";
             this.lbAffectationDateDebINFO.Size = new System.Drawing.Size(134, 13);
             this.lbAffectationDateDebINFO.TabIndex = 15;
@@ -200,7 +202,7 @@
             // lbAffectationDateFinINFO
             // 
             this.lbAffectationDateFinINFO.AutoSize = true;
-            this.lbAffectationDateFinINFO.Location = new System.Drawing.Point(126, 240);
+            this.lbAffectationDateFinINFO.Location = new System.Drawing.Point(127, 265);
             this.lbAffectationDateFinINFO.Name = "lbAffectationDateFinINFO";
             this.lbAffectationDateFinINFO.Size = new System.Drawing.Size(128, 13);
             this.lbAffectationDateFinINFO.TabIndex = 16;
@@ -209,7 +211,7 @@
             // lbAffectationCasier
             // 
             this.lbAffectationCasier.AutoSize = true;
-            this.lbAffectationCasier.Location = new System.Drawing.Point(21, 188);
+            this.lbAffectationCasier.Location = new System.Drawing.Point(22, 213);
             this.lbAffectationCasier.Name = "lbAffectationCasier";
             this.lbAffectationCasier.Size = new System.Drawing.Size(42, 13);
             this.lbAffectationCasier.TabIndex = 17;
@@ -218,7 +220,7 @@
             // lbAffectationCasierINFO
             // 
             this.lbAffectationCasierINFO.AutoSize = true;
-            this.lbAffectationCasierINFO.Location = new System.Drawing.Point(126, 188);
+            this.lbAffectationCasierINFO.Location = new System.Drawing.Point(127, 213);
             this.lbAffectationCasierINFO.Name = "lbAffectationCasierINFO";
             this.lbAffectationCasierINFO.Size = new System.Drawing.Size(120, 13);
             this.lbAffectationCasierINFO.TabIndex = 18;
@@ -226,18 +228,38 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(114, 280);
+            this.button1.Location = new System.Drawing.Point(114, 294);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 19;
             this.button1.Text = "Rendre perdu";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lbAffectationPaysINFO
+            // 
+            this.lbAffectationPaysINFO.AutoSize = true;
+            this.lbAffectationPaysINFO.Location = new System.Drawing.Point(127, 113);
+            this.lbAffectationPaysINFO.Name = "lbAffectationPaysINFO";
+            this.lbAffectationPaysINFO.Size = new System.Drawing.Size(114, 13);
+            this.lbAffectationPaysINFO.TabIndex = 21;
+            this.lbAffectationPaysINFO.Text = "lbAffectationPaysINFO";
+            // 
+            // lbAffectationPays
+            // 
+            this.lbAffectationPays.AutoSize = true;
+            this.lbAffectationPays.Location = new System.Drawing.Point(22, 113);
+            this.lbAffectationPays.Name = "lbAffectationPays";
+            this.lbAffectationPays.Size = new System.Drawing.Size(36, 13);
+            this.lbAffectationPays.TabIndex = 20;
+            this.lbAffectationPays.Text = "Pays :";
+            // 
             // PageAffichageInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 319);
+            this.ClientSize = new System.Drawing.Size(320, 345);
+            this.Controls.Add(this.lbAffectationPaysINFO);
+            this.Controls.Add(this.lbAffectationPays);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbAffectationCasierINFO);
             this.Controls.Add(this.lbAffectationCasier);
@@ -287,5 +309,7 @@
         private System.Windows.Forms.Label lbAffectationCasier;
         private System.Windows.Forms.Label lbAffectationCasierINFO;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbAffectationPaysINFO;
+        private System.Windows.Forms.Label lbAffectationPays;
     }
 }

@@ -161,14 +161,14 @@ namespace AppCasier
         {
             try
             {
-                string requete = "SELECT t.tag , v.nom , v.prenom , v.compagnie , v.numPlaque , c.numeroCasier , a.dateDebut , a.dateFin FROM Affectation a, Visiteur v , Tag t, Casier c WHERE a.id_Visiteur = v.id_Visiteur AND a.id_Tag = t.tag AND a.id_Casier = c.numeroCasier AND c.numeroCasier = '" + casier + "'";
+                string requete = "SELECT t.tag , v.nom , v.prenom , v.compagnie , v.numPlaque , c.numeroCasier , a.dateDebut , a.dateFin , v.pays FROM Affectation a, Visiteur v , Tag t, Casier c WHERE a.id_Visiteur = v.id_Visiteur AND a.id_Tag = t.tag AND a.id_Casier = c.numeroCasier AND c.numeroCasier = '" + casier + "'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 reader.Read();
 
-                string[] details = new string[8];
+                string[] details = new string[9];
                 details[0] = reader[0].ToString();
                 details[1] = reader[1].ToString();
                 details[2] = reader[2].ToString();
@@ -177,9 +177,7 @@ namespace AppCasier
                 details[5] = reader[5].ToString();
                 details[6] = reader[6].ToString();
                 details[7] = reader[7].ToString();
-
-
-
+                details[8] = reader[8].ToString();
 
                 reader.Close();
                 return details;
@@ -339,17 +337,19 @@ namespace AppCasier
             }
         }
 
-        public bool ajouterVisiteur(string nom, string prenom, string plaque, string compagnie)
+        public bool ajouterVisiteur(string nom, string prenom, string plaque, string compagnie,string pays)
         {
             try
             {
+
                 // Chiffrage des informations
                 nom = chiffrage.Encrypt(nom);
                 prenom = chiffrage.Encrypt(prenom);
                 plaque = chiffrage.Encrypt(plaque);
                 compagnie = chiffrage.Encrypt(compagnie);
+                pays = chiffrage.Encrypt(pays);
 
-                string requete = "INSERT INTO Visiteur (nom, prenom, numPlaque, compagnie) VALUES ('" + nom + "', '" + prenom + "', '" + plaque + "', '" + compagnie + "')";
+                string requete = "INSERT INTO Visiteur (nom, prenom, numPlaque, compagnie,pays) VALUES ('" + nom + "', '" + prenom + "', '" + plaque + "', '" + compagnie + "' ,'" + pays +"')";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 cmd.ExecuteNonQuery();
@@ -556,7 +556,7 @@ namespace AppCasier
         {
             try
             {
-                string requete = "SELECT t.tag , v.nom , v.prenom , v.compagnie , v.numPlaque , c.numeroCasier , a.dateDebut , a.dateFin FROM Affectation a, Visiteur v , Tag t, Casier c WHERE a.id_Visiteur = v.id_Visiteur AND a.id_Tag = t.tag AND a.id_Casier = c.numeroCasier AND a.id_Affectation = '" + id + "'";
+                string requete = "SELECT t.tag , v.nom , v.prenom , v.compagnie , v.numPlaque , c.numeroCasier , a.dateDebut , a.dateFin , v.pays FROM Affectation a, Visiteur v , Tag t, Casier c WHERE a.id_Visiteur = v.id_Visiteur AND a.id_Tag = t.tag AND a.id_Casier = c.numeroCasier AND a.id_Affectation = '" + id + "'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -572,6 +572,7 @@ namespace AppCasier
                 details[5] = reader[5].ToString();
                 details[6] = reader[6].ToString();
                 details[7] = reader[7].ToString();
+                details[8] = reader[8].ToString();
 
 
 
@@ -581,7 +582,7 @@ namespace AppCasier
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur lors de la récupération des détails de l'affectation : " + ex.Message);
+                MessageBox.Show("Erreur lors de la récupération des info de l'affectation : " + ex.Message);
                 return null;
             }
         }
