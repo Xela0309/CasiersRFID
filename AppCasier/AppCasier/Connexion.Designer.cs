@@ -116,6 +116,7 @@
             this.Controls.Add(this.lbConnexion);
             this.Name = "Connexion";
             this.Text = "Connexion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Connexion_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

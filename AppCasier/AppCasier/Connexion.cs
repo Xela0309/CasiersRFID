@@ -58,7 +58,17 @@ namespace AppCasier
 
         private void btCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close(); // Ferme la page actuelle pour revenir à `MainForm`
+        }
+
+        private void Connexion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Verifier si un utilisateur a été choisi
+            if (mainForm.GetLogin() == "")
+            {
+                // Si non, fermer l'application
+                Application.Exit();
+            }
         }
     }
 }

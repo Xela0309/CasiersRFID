@@ -563,7 +563,7 @@ namespace AppCasier
 
                 reader.Read();
 
-                string[] details = new string[8];
+                string[] details = new string[9];
                 details[0] = reader[0].ToString();
                 details[1] = reader[1].ToString();
                 details[2] = reader[2].ToString();

@@ -90,7 +90,6 @@ C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\bin\Release\System.Nume
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.csproj.AssemblyReference.cache
-C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.csproj.SuggestedBindingRedirects.cache
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.Connexion.resources
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.MainForm.resources
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.PageAffichageInterface.resources
@@ -114,3 +113,9 @@ C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\System.IO.Po
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\bin\Release\System.IO.Ports.xml
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.PageAjoutTag.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.lectureTag.resources
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\bin\Release\System.IO.Ports.dll
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\bin\Release\System.IO.Ports.xml
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.lectureTag.resources
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.logout.resources
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.PageAjoutTag.resources
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.verifDate.resources

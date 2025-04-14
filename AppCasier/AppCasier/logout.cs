@@ -37,8 +37,6 @@ namespace AppCasier
 
         private void btLogout_Click(object sender, EventArgs e)
         {
-            mainform.SetLogin("");
-            mainform.SetRole("");
             Connexion connexion = new Connexion(mainform);
             connexion.ShowDialog();
             this.Close();

@@ -45,7 +45,6 @@ namespace AppCasier
         private void AffichageInfo(string[] detailsAffectation)
         {
             lbAffectationTagINFO.Text = detailsAffectation[0];
-            //lbAffectationTagINFO.Text = ch.Decrypt(detailsAffectation[0]);
             lbAffectationNomINFO.Text = ch.Decrypt(detailsAffectation[1]);
             lbAffectationPrenomINFO.Text = ch.Decrypt(detailsAffectation[2]);
             lbAffectationCompagnieINFO.Text = ch.Decrypt(detailsAffectation[3]);
@@ -53,6 +52,12 @@ namespace AppCasier
             lbAffectationCasierINFO.Text = detailsAffectation[5];
             lbAffectationDateDebINFO.Text = detailsAffectation[6];
             lbAffectationDateFinINFO.Text = detailsAffectation[7];
+            lbAffectationPaysINFO.Text = ch.Decrypt(detailsAffectation[8]);
+
+        }
+
+        private void verifDate_Load(object sender, EventArgs e)
+        {
 
         }
     }
