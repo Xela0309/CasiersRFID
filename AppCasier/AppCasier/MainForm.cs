@@ -188,6 +188,10 @@ namespace AppCasier
                             MessageBox.Show("Erreur lors de l'ajout de l'affectation !");
                         }
                     }
+		    else 
+		    {
+			MessageBox.Show("La date de début doit être celle d'aujourd'hui");
+		    }
                 }
             }
         }
