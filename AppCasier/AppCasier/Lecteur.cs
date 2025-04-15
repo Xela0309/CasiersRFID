@@ -11,11 +11,10 @@ namespace AppCasier
     {
 
         private string m_tag = ""; // Tag lu par le lecteur
-    private string m_data = "";
+        private string m_data = "";
         private string m_port;
         private int m_baud;
         private SerialPort m_SPort;
-
 
         public Lecteur(string port, int baud)
         {
