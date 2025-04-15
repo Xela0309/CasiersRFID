@@ -28,8 +28,6 @@ namespace AppCasier
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 affichageGeneral();
                 affichageDatePasser();
-
-
             }
         }
 
