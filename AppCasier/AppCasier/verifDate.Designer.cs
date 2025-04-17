@@ -47,7 +47,7 @@
             this.lbAffectationPrenom = new System.Windows.Forms.Label();
             this.btInfoAffectationSupprimer = new System.Windows.Forms.Button();
             this.btInfoAffectationFermer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btPerdu = new System.Windows.Forms.Button();
             this.lbAffectationPaysINFO = new System.Windows.Forms.Label();
             this.lbAffectationPays = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -226,14 +226,15 @@
             this.btInfoAffectationFermer.UseVisualStyleBackColor = true;
             this.btInfoAffectationFermer.Click += new System.EventHandler(this.btInfoAffectationFermer_Click);
             // 
-            // button1
+            // btPerdu
             // 
-            this.button1.Location = new System.Drawing.Point(119, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Rendre perdu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btPerdu.Location = new System.Drawing.Point(119, 281);
+            this.btPerdu.Name = "btPerdu";
+            this.btPerdu.Size = new System.Drawing.Size(88, 23);
+            this.btPerdu.TabIndex = 37;
+            this.btPerdu.Text = "Rendre perdu";
+            this.btPerdu.UseVisualStyleBackColor = true;
+            this.btPerdu.Click += new System.EventHandler(this.btPerdu_Click);
             // 
             // lbAffectationPaysINFO
             // 
@@ -260,7 +261,7 @@
             this.ClientSize = new System.Drawing.Size(328, 325);
             this.Controls.Add(this.lbAffectationPaysINFO);
             this.Controls.Add(this.lbAffectationPays);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btPerdu);
             this.Controls.Add(this.lbAffectationCasierINFO);
             this.Controls.Add(this.lbAffectationCasier);
             this.Controls.Add(this.lbAffectationDateFinINFO);
@@ -282,7 +283,6 @@
             this.Controls.Add(this.label1);
             this.Name = "verifDate";
             this.Text = "verifDate";
-            this.Load += new System.EventHandler(this.verifDate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,7 +309,7 @@
         private System.Windows.Forms.Label lbAffectationPrenom;
         private System.Windows.Forms.Button btInfoAffectationSupprimer;
         private System.Windows.Forms.Button btInfoAffectationFermer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btPerdu;
         private System.Windows.Forms.Label lbAffectationPaysINFO;
         private System.Windows.Forms.Label lbAffectationPays;
     }

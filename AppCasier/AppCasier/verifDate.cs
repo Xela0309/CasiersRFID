@@ -56,9 +56,16 @@ namespace AppCasier
 
         }
 
-        private void verifDate_Load(object sender, EventArgs e)
+        private void btPerdu_Click(object sender, EventArgs e)
         {
-
+            if(db.rendrePerdu(lbAffectationTag.Text))
+            {
+                MessageBox.Show("Le tag a été marqué comme perdu.");
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag.");
+            }
         }
     }
 }

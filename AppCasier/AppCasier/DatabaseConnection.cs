@@ -196,6 +196,8 @@ namespace AppCasier
                 nom = chiffrage.Encrypt(nom);
                 prenom = chiffrage.Encrypt(prenom);
 
+                if (!updateEtatTagO(tag)) throw new Exception("Erreur lors de la mise à jour du tag");
+
                 string requete = "INSERT INTO Affectation (id_Tag, id_Visiteur, id_Casier, dateDebut, dateFin) VALUES ('" + tag + "', (SELECT id_Visiteur FROM Visiteur WHERE nom = '" + nom + "' AND prenom = '" + prenom + "' ) , '" + casier + "' , '" + dateDeb + "' , '" + dateFin + "')";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
@@ -213,6 +215,8 @@ namespace AppCasier
         {
             try
             {
+                if (!updateEtatTagU(casier)) throw new Exception("Erreur lors de la mise à jour du tag");
+
                 string requete = "DELETE FROM Affectation WHERE id_Casier = '" + casier + "'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
@@ -531,7 +535,7 @@ namespace AppCasier
         {
             try
             {
-                string requete = "SELECT * FROM Affectation WHERE dateFin < NOW()";
+                string requete = "SELECT * FROM Affectation a, Tag t WHERE a.id_Tag = t.tag AND a.dateFin < NOW() AND t.etat = 'O'";
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -614,33 +618,6 @@ namespace AppCasier
             }
         }
 
-        //public bool verifTagU(string tag)
-        //{
-        //    try
-        //    {
-        //        string requete = "SELECT * FROM Tag WHERE tag = '" + tag + "' AND etat  = 'U' ";
-
-        //        MySqlCommand cmd = new MySqlCommand(requete, connection);
-        //        MySqlDataReader reader = cmd.ExecuteReader();
-
-        //        if (reader.Read())
-        //        {
-        //            reader.Close();
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            reader.Close();
-        //            return false;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Erreur lors de la vérification du tag : " + ex.Message);
-        //        return false;
-        //    }
-        //}
-
         public bool ajouterTag(string tag)
         {
             try
@@ -654,6 +631,152 @@ namespace AppCasier
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de l'ajout du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool rendrePerdu(string tag)
+        {
+            try
+            {
+                string requete = "UPDATE Tag SET etat = 'P' WHERE tag = '" + tag + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool rendreUtilisable(string tag)
+        {
+            try
+            {
+                string requete = "UPDATE Tag SET etat = 'U' WHERE tag = '" + tag + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool updateEtatTagO(string tag)
+        {
+            try
+            {
+                string requete = "UPDATE Tag SET etat = 'O' WHERE tag = '" + tag + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool updateEtatTagU(string casier)
+        {
+            try
+            {
+                string requete = "UPDATE Tag SET etat = 'U' WHERE tag = (SELECT id_Tag FROM Affectation WHERE id_Casier = '" + casier + "')";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag : " + ex.Message);
+                return false;
+            }
+        }
+
+        public string[] recupTagPO()
+        {
+            try
+            {
+                string requete = "SELECT * FROM Tag WHERE etat = 'P' OR etat = 'O'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> liste = new List<string>();
+
+                while (reader.Read())
+                {
+                    liste.Add(reader[0].ToString());
+                }
+                reader.Close();
+                return liste.ToArray();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération des tags : " + ex.Message);
+                return null;
+            }
+
+        }
+        
+        public char getEtatTag(string tag)
+        {
+            try
+            {
+                string requete = "SELECT * FROM Tag WHERE tag = '" + tag + "'";
+
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+                char etat = Convert.ToChar(reader[1].ToString());
+                reader.Close();
+                return etat;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la récupération de l'état du tag : " + ex.Message);
+                return '?';
+            }
+        }
+
+        public bool updateTag(string tag, string etat)
+        {
+            try
+            {
+                if (etat == "O")
+                {
+                    string requete = "UPDATE Tag SET etat = 'P' WHERE tag = '" + tag + "'";
+                    MySqlCommand cmd = new MySqlCommand(requete, connection);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                else if (etat == "P")
+                {
+                    string requete = "UPDATE Tag SET etat = 'O' WHERE tag = '" + tag + "'";
+                    MySqlCommand cmd = new MySqlCommand(requete, connection);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Erreur lors de la mise à jour du tag : état invalide");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag : " + ex.Message);
                 return false;
             }
         }

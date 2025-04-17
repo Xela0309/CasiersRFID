@@ -14,8 +14,8 @@ namespace AppCasier
         public Timer menuTimer;
         private Panel menuPanel;
 
-        string[] menuItemsAdmin = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag" };
-        string[] menuItemsUser = { "Ajouter Visiteur", "Ajout Tag", "Supprimer Visiteur", "Supprimer Tag" };
+        string[] menuItemsAdmin = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag","Changement d'état" };
+        string[] menuItemsUser = { "Ajouter Visiteur", "Ajout Tag", "Supprimer Visiteur", "Supprimer Tag", "PageChangementEtat" };
 
         MainForm mainform;
         Lecteur lecteur = new Lecteur("COM8", 9600); // Port et vitesse de communication0
@@ -161,6 +161,18 @@ namespace AppCasier
                 // Ouvrir la page de suppression de tag
                 pageSupprTag page = new pageSupprTag(mainform);
                 page.ShowDialog();
+            }
+            else if (menuItem == "Changement d'état")
+            {
+                // Ouvrir la page de changement d'état
+                PageChangementEtat page = new PageChangementEtat(mainform);
+                page.ShowDialog();
+            }
+            else if (menuItem == "Déconnexion")
+            {
+                // Ouvrir la page de déconnexion
+                logout logout = new logout(mainform);
+                logout.ShowDialog();
             }
             else
             {
