@@ -47,7 +47,7 @@
             this.lbAffectationDateFinINFO = new System.Windows.Forms.Label();
             this.lbAffectationCasier = new System.Windows.Forms.Label();
             this.lbAffectationCasierINFO = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btPerdu = new System.Windows.Forms.Button();
             this.lbAffectationPaysINFO = new System.Windows.Forms.Label();
             this.lbAffectationPays = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -226,14 +226,15 @@
             this.lbAffectationCasierINFO.TabIndex = 18;
             this.lbAffectationCasierINFO.Text = "lbAffectationCasierINFO";
             // 
-            // button1
+            // btPerdu
             // 
-            this.button1.Location = new System.Drawing.Point(114, 294);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Rendre perdu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btPerdu.Location = new System.Drawing.Point(114, 294);
+            this.btPerdu.Name = "btPerdu";
+            this.btPerdu.Size = new System.Drawing.Size(86, 23);
+            this.btPerdu.TabIndex = 19;
+            this.btPerdu.Text = "Rendre perdu";
+            this.btPerdu.UseVisualStyleBackColor = true;
+            this.btPerdu.Click += new System.EventHandler(this.btPerdu_Click);
             // 
             // lbAffectationPaysINFO
             // 
@@ -260,7 +261,7 @@
             this.ClientSize = new System.Drawing.Size(320, 345);
             this.Controls.Add(this.lbAffectationPaysINFO);
             this.Controls.Add(this.lbAffectationPays);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btPerdu);
             this.Controls.Add(this.lbAffectationCasierINFO);
             this.Controls.Add(this.lbAffectationCasier);
             this.Controls.Add(this.lbAffectationDateFinINFO);
@@ -308,7 +309,7 @@
         private System.Windows.Forms.Label lbAffectationDateFinINFO;
         private System.Windows.Forms.Label lbAffectationCasier;
         private System.Windows.Forms.Label lbAffectationCasierINFO;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btPerdu;
         private System.Windows.Forms.Label lbAffectationPaysINFO;
         private System.Windows.Forms.Label lbAffectationPays;
     }

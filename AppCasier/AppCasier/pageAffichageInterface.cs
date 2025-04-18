@@ -59,5 +59,17 @@ namespace AppCasier
 
         }
 
+        private void btPerdu_Click(object sender, EventArgs e)
+        {
+            if (db.rendrePerdu(lbAffectationTagINFO.Text))
+            {
+                MessageBox.Show("Le tag a été marqué comme perdu.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de la mise à jour du tag.");
+            }
+        }
     }
 }

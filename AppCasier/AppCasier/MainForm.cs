@@ -27,7 +27,6 @@ namespace AppCasier
             {
                 db.OpenConnection(); // Ouvrir la connexion à la base de données
                 affichageGeneral();
-                affichageDatePasser();
             }
         }
 
@@ -40,6 +39,8 @@ namespace AppCasier
             affichageSelection();
             menu.InitializeHamburgerMenu(this); // Initialiser le menu
             menu.SetMainForm(this); // Mettre à jour le formulaire principal
+            affichageDatePasser();
+
         }
         private void OpenConnexion()
         {

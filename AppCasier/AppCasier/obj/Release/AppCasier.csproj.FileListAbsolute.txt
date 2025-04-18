@@ -120,3 +120,5 @@ C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.l
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.PageAjoutTag.resources
 C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.verifDate.resources
 C:\Users\picarda\Desktop\Production\AppCasier\AppCasier\obj\Release\AppCasier.PageChangementEtat.resources
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.csproj.SuggestedBindingRedirects.cache
+C:\Users\picarda\Desktop\CasiersRFID\AppCasier\AppCasier\obj\Release\AppCasier.PageChangementEtat.resources

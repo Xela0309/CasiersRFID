@@ -21,6 +21,7 @@ namespace AppCasier
             InitializeComponent();
             AffichageInfo(detailsAffectation);
             mainForm = form;
+            db.OpenConnection();
         }
 
         private void btInfoAffectationFermer_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace AppCasier
             string casier = lbAffectationCasierINFO.Text;
 
 
-            db.OpenConnection();
+
             db.supprimerAffectation(casier);
             this.Close();
 
@@ -58,9 +59,10 @@ namespace AppCasier
 
         private void btPerdu_Click(object sender, EventArgs e)
         {
-            if(db.rendrePerdu(lbAffectationTag.Text))
+            if(db.rendrePerdu(lbAffectationTagINFO.Text))
             {
                 MessageBox.Show("Le tag a été marqué comme perdu.");
+                this.Close();
             }
             else
             {
