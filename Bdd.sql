@@ -9,7 +9,7 @@ CREATE TABLE Tag (
     etat Enum('O','U','P') NOT NULL
 ) ENGINE = InnoDB;
 
-# O = occupée
+# O = occuper
 # U = utilisable
 # P = perdu
 
