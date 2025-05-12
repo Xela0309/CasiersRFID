@@ -12,7 +12,7 @@ namespace AppCasier
             _key = GenerateKey(password, 256); // Génération de la clé à partir du mot de passe
         }
 
-        // 🔹 Génère une clé pseudo-aléatoire basée sur un mot de passe (PRNG)
+        // Génère une clé pseudo-aléatoire basée sur un mot de passe (PRNG)
         private byte[] GenerateKey(string password, int length)
         {
             byte[] key = new byte[length];
@@ -31,7 +31,7 @@ namespace AppCasier
             return key;
         }
 
-        // 🔹 Fonction de chiffrement XOR avancé
+        // Fonction de chiffrement XOR avancé
         public string Encrypt(string input)
         {
             byte[] inputBytes = Encoding.UTF8.GetBytes(input);
@@ -45,7 +45,7 @@ namespace AppCasier
             return BytesToHex(outputBytes); // Encodage en Hexadécimal
         }
 
-        // 🔹 Fonction de déchiffrement
+        // Fonction de déchiffrement
         public string Decrypt(string input)
         {
             byte[] inputBytes = HexToBytes(input);
@@ -59,7 +59,7 @@ namespace AppCasier
             return Encoding.UTF8.GetString(outputBytes);
         }
 
-        // 🔹 Encodage en Hexadécimal
+        // Encodage en Hexadécimal
         private string BytesToHex(byte[] bytes)
         {
             StringBuilder hex = new StringBuilder(bytes.Length * 2);
@@ -68,7 +68,7 @@ namespace AppCasier
             return hex.ToString();
         }
 
-        // 🔹 Décodage Hexadécimal vers byte[]
+        // Décodage Hexadécimal vers byte[]
         private byte[] HexToBytes(string hex)
         {
             byte[] bytes = new byte[hex.Length / 2];
