@@ -24,4 +24,5 @@ public:
     bool connexion();
     void deconnexion();
     bool insertBadge(const std::string& badgeID);
+    bool badgeExiste(const std::string& badgeID);
 };
