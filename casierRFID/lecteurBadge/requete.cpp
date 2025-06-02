@@ -1,68 +1,94 @@
 #include "requete.h"
 
-// Constructeur de la classe Requete : initialise la connexion ‡ la base de donnÈes MySQL
+// Constructeur de la classe Requete : initialise la connexion √† la base de donn√©es MySQL
 Requete::Requete(const std::string& host, const std::string& user, const std::string& password, const std::string& database) {
     try {
         // Obtention d'une instance du driver MySQL
         driver = get_driver_instance();
 
-        // CrÈation d'une connexion avec les informations fournies (hÙte, utilisateur, mot de passe)
+        // Cr√©ation d'une connexion avec les informations fournies (h√¥te, utilisateur, mot de passe)
         con = std::unique_ptr<sql::Connection>(driver->connect(host, user, password));
 
-        // SÈlection de la base de donnÈes ‡ utiliser
+        // S√©lection de la base de donn√©es √† utiliser
         con->setSchema(database);
 
         std::cout << "Connexion a la base de donnees reussie !" << std::endl;
     }
     catch (sql::SQLException& e) {
-        // Gestion des erreurs en cas d'Èchec de connexion
+        // Gestion des erreurs en cas d'√©chec de connexion
         std::cerr << "Erreur de connexion MySQL: " << e.what() << " (Code: " << e.getErrorCode() << ")" << std::endl;
     }
 }
 
-// Destructeur de la classe Requete : ferme la connexion ‡ la base de donnÈes
+// Destructeur de la classe Requete : ferme la connexion √† la base de donn√©es
 Requete::~Requete() {
     deconnexion();
 }
 
-// VÈrifie si la connexion ‡ la base de donnÈes est bien Ètablie
+// V√©rifie si la connexion √† la base de donn√©es est bien √©tablie
 bool Requete::connexion() {
     return con != nullptr; // Retourne vrai si la connexion existe, faux sinon
 }
 
-// Ferme proprement la connexion ‡ la base de donnÈes
+// Ferme proprement la connexion √† la base de donn√©es
 void Requete::deconnexion() {
     if (con) {
-        con.reset(); // RÈinitialisation du pointeur unique, libÈrant ainsi la connexion
+        con.reset(); // R√©initialisation du pointeur unique, lib√©rant ainsi la connexion
         std::cout << "Connexion MySQL fermee." << std::endl;
     }
 }
 
-// InsËre un badge dans la base de donnÈes
+// Ins√®re un badge dans la base de donn√©es
 bool Requete::insertBadge(const std::string& badgeID) {
     try {
-        // VÈrifie si la connexion ‡ la base de donnÈes est bien Ètablie avant d'insÈrer un badge
+        // V√©rifie si la connexion √† la base de donn√©es est bien √©tablie avant d'ins√©rer un badge
         if (!con) {
             std::cerr << "Erreur : connexion MySQL non etablie." << std::endl;
             return false;
         }
 
-        // PrÈparation de la requÍte SQL pour insÈrer un badge dans la table "Tag"
-        // Utilisation d'une requÍte prÈparÈe pour Èviter les injections SQL
+        // Pr√©paration de la requ√™te SQL pour ins√©rer un badge dans la table "Tag"
+        // Utilisation d'une requ√™te pr√©par√©e pour √©viter les injections SQL
         std::unique_ptr<sql::PreparedStatement> pstmt(con->prepareStatement("INSERT INTO Tag (Tag) VALUES (?)"));
 
-        // Remplacement du "?" dans la requÍte par l'identifiant du badge
+        // Remplacement du "?" dans la requ√™te par l'identifiant du badge
         pstmt->setString(1, badgeID);
 
-        // ExÈcution de la requÍte d'insertion
+        // Ex√©cution de la requ√™te d'insertion
         pstmt->executeUpdate();
 
         std::cout << "Badge insere avec succes !" << std::endl;
-        return true; // Retourne vrai si l'insertion s'est bien passÈe
+        return true; // Retourne vrai si l'insertion s'est bien pass√©e
     }
     catch (sql::SQLException& e) {
-        // Gestion des erreurs en cas d'Èchec de l'insertion
+        // Gestion des erreurs en cas d'√©chec de l'insertion
         std::cerr << "Erreur d'insertion : " << e.what() << " (Code: " << e.getErrorCode() << ")" << std::endl;
+        return false;
+    }
+}
+
+// V√©rifie si un badge existe dans la base de donn√©es
+bool Requete::badgeExiste(const std::string& badgeID)
+{
+    try
+    {
+        if (!con)
+        {
+            std::cerr << "Erreur : connexion MySQL non √©tablie." << std::endl;
+            return false;
+        }
+
+        std::unique_ptr<sql::PreparedStatement> pstmt(con->prepareStatement("SELECT COUNT(*) FROM Tag WHERE Tag = ?"));
+        pstmt->setString(1, badgeID);
+
+        std::unique_ptr<sql::ResultSet> res(pstmt->executeQuery());
+        res->next();
+
+        return res->getInt(1) > 0; // Retourne vrai si le badge existe d√©j√†
+    }
+    catch (sql::SQLException& e)
+    {
+        std::cerr << "Erreur lors de la v√©rification du badge : " << e.what() << " (Code: " << e.getErrorCode() << ")" << std::endl;
         return false;
     }
 }
