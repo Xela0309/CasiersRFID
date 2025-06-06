@@ -1,0 +1,236 @@
+﻿  Validation des sources
+  Copie des sources à distance vers '10.187.52.121'
+  Validation de l'architecture
+  Validation de l'architecture
+  Démarrage de la build distante
+  Compilation des sources :
+  class_casiers.cpp
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\class_casiers.cpp(115,17): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\class_casiers.cpp(115,17): warning :   115 |     s.fixDegree(position);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\class_casiers.cpp(115,17): warning :       |                 ^~~~~~~~
+  HerkuleXServo.cpp
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(304,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(304,67): warning :   304 |         temperature = (static_cast<float>(response.at(0)) * 0.466 - 31.9);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(304,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(321,55): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(321,55): warning :   321 |         voltage = (static_cast<float>(response.at(0)) * 0.074);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(321,55): warning :       |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(669,39): warning : conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(696,43): warning : conversion from ‘int’ to ‘int16_t’ {aka ‘short int’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(696,43): warning :   696 |         return ((this->velocity & 0xDFFF) * -1);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(696,43): warning :       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(704,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(704,67): warning :   704 |     float minDegree = (this->minPosition - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(704,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(705,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(705,67): warning :   705 |     float maxDegree = (this->maxPosition - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(705,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(713,30): warning : conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(713,30): warning :   713 |     return this->fixPosition(position, playtime);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(713,30): warning :       |                              ^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(721,49): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(721,49): warning :   721 |     degree = (position - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(721,49): warning :       |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(726,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(726,67): warning :   726 |     float minDegree = (this->minPosition - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(726,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(727,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(727,67): warning :   727 |     float maxDegree = (this->maxPosition - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(727,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(739,53): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(739,53): warning :   739 |     return (this->position - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(739,53): warning :       |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(785,72): warning : conversion from ‘std::vector<unsigned char>::size_type’ {aka ‘unsigned int’} to ‘__gnu_cxx::__alloc_traits<std::allocator<unsigned char>, unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(834,72): warning : conversion from ‘std::vector<unsigned char>::size_type’ {aka ‘unsigned int’} to ‘__gnu_cxx::__alloc_traits<std::allocator<unsigned char>, unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(890,27): warning : conversion from ‘int’ to ‘std::vector<unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(890,27): warning :   890 |     data.push_back(valueK & 0x00FF);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(890,27): warning :       |                    ~~~~~~~^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(891,37): warning : conversion from ‘int’ to ‘std::vector<unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(891,37): warning :   891 |     data.push_back((valueK & 0xFF00)>>8);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(891,37): warning :       |                    ~~~~~~~~~~~~~~~~~^~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(991,9): warning : this ‘else’ clause does not guard... [-Wmisleading-indentation]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(991,9): warning :   991 |         else
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(991,9): warning :       |         ^~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(993,13): message : ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(993,13): message :   993 |             return false;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(993,13): message :       |             ^~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(1093,60): warning : conversion from ‘std::vector<unsigned char>::size_type’ {aka ‘unsigned int’} to ‘std::vector<unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(1093,60): warning :  1093 |     frameToSend.push_back(HERKULEX_EEPROM_RAM_WRITE_LENGHT + data.size());
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(1093,60): warning :       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(1102,36): warning : conversion from ‘std::vector<unsigned char>::size_type’ {aka ‘unsigned int’} to ‘std::vector<unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(1102,36): warning :  1102 |     frameToSend.push_back(data.size());
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\HerkuleXServo.cpp(1102,36): warning :       |                           ~~~~~~~~~^~
+  main.cpp
+  requete.cpp
+  RFIDReader.cpp
+  RGBLED.cpp
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp(27,1): warning : control reaches end of non-void function [-Wreturn-type]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp(27,1): warning :    27 | }
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp(27,1): warning :       | ^
+  serialib.cpp
+  Liaison des objets
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/requete.o : dans la fonction « Requete::Requete(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\requete.cpp : error : 7 : référence indéfinie vers « get_driver_instance »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/main.o : dans la fonction « main » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\main.cpp : error : 143 : référence indéfinie vers « gpioTerminate »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::~DelRGBChainable() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 19 : référence indéfinie vers « gpioTerminate »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::initGpio() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 23 : référence indéfinie vers « gpioInitialise »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::sendByte(unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 44 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::clk() » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 30 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:31 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:32 : référence indéfinie vers « gpioWrite »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:33 : référence indéfinie vers « gpioDelay »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/obj/ARM64/Release/RGBLED.o : dans la fonction « DelRGBChainable::DelRGBChainable(unsigned char, unsigned char, unsigned char) » :
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\fichiers\RGBLED.cpp : error : 7 : référence indéfinie vers « gpioInitialise »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:8 : référence indéfinie vers « gpioSetMode »
+/usr/bin/ld  : error : /home/rfid/projects/servo_pi/fichiers/RGBLED.cpp:9 : référence indéfinie vers « gpioSetMode »
+collect2 : error : ld returned 1 exit status

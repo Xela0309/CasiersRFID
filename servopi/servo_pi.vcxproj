@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{726c1535-5abc-4fbe-868a-6a06f73f2ee0}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>servo_pi</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Raspberry</TargetLinuxPlatform>
+    <LinuxProjectType>{8748239F-558C-44D1-944B-07B09C35B330}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <IncludePath>C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\boost_1_64_0;C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\servo_pi\mysql-connector-c++-noinstall-1.1.9-win32\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Link>
+      <LibraryDependencies>wiringPi</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>gpio export 17 out</Command>
+      <Message>exporte la broche 17 à l'aide de l'utilitaire gpio pour nous permettre d'exécuter le programme blink sans sudo</Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Link>
+      <LibraryDependencies>wiringPi</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>gpio export 17 out</Command>
+      <Message>exporte la broche 17 à l'aide de l'utilitaire gpio pour nous permettre d'exécuter le programme blink sans sudo</Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="fichiers\class_casiers.cpp" />
+    <ClCompile Include="fichiers\HerkuleXServo.cpp" />
+    <ClCompile Include="fichiers\main.cpp" />
+    <ClCompile Include="fichiers\mainLed.cpp" />
+    <ClCompile Include="fichiers\main_casiers.cpp" />
+    <ClCompile Include="fichiers\main_fichier_test.cpp" />
+    <ClCompile Include="fichiers\main_position.cpp" />
+    <ClCompile Include="fichiers\main_test.cpp" />
+    <ClCompile Include="fichiers\requete.cpp" />
+    <ClCompile Include="fichiers\RFIDReader.cpp" />
+    <ClCompile Include="fichiers\RGBLED.cpp" />
+    <ClCompile Include="fichiers\serialib.cpp" />
+    <ClCompile Include="fichiers\servo_class.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fichiers\class_casiers.h" />
+    <ClInclude Include="fichiers\HerkuleXServo.h" />
+    <ClInclude Include="fichiers\requete.h" />
+    <ClInclude Include="fichiers\RFIDReader.h" />
+    <ClInclude Include="fichiers\RGBLED.h" />
+    <ClInclude Include="fichiers\serialib.h" />
+    <ClInclude Include="fichiers\servo_class.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="fichiers\position_servo.txt" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Link>
+      <LibraryDependencies>pigpio;mysqlcppconn</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

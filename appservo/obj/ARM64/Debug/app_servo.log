@@ -1,0 +1,69 @@
+﻿  Validation des sources
+  Copie des sources à distance vers '10.187.52.121'
+  Validation de l'architecture
+  Validation de l'architecture
+  Démarrage de la build distante
+  Compilation des sources :
+  servo_class.cpp
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(22,19): warning : unused variable ‘servopos’ [-Wunused-variable]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(22,19): warning :    22 |     ServoValuePos servopos;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(22,19): warning :       |                   ^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(23,20): warning : unused variable ‘servovolt’ [-Wunused-variable]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(23,20): warning :    23 |     ServoValueVolt servovolt;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(23,20): warning :       |                    ^~~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(97,17): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(97,17): warning :    97 |     s.fixDegree(degree);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(97,17): warning :       |                 ^~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(106,17): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(106,17): warning :   106 |     s.fixDegree(degree);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(106,17): warning :       |                 ^~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(124,17): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(124,17): warning :   124 |     s.fixDegree(degree);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(124,17): warning :       |                 ^~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(162,17): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(162,17): warning :   162 |     s.fixDegree(degree);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(162,17): warning :       |                 ^~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(179,22): warning : conversion from ‘int’ to ‘float’ may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(179,22): warning :   179 |     return (position - midPosition) * 0.325f;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(179,22): warning :       |            ~~~~~~~~~~^~~~~~~~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(179,37): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(179,37): warning :   179 |     return (position - midPosition) * 0.325f;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(179,37): warning :       |            ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(222,27): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(222,27): warning :   222 |             int res_val = value;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(222,27): warning :       |                           ^~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(216,13): warning : unused variable ‘res_val’ [-Wunused-variable]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(216,13): warning :   216 |         int res_val;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(216,13): warning :       |             ^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(272,27): warning : conversion from ‘float’ to ‘int’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(272,27): warning :   272 |             int res_val = value;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(272,27): warning :       |                           ^~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(266,13): warning : unused variable ‘res_val’ [-Wunused-variable]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(266,13): warning :   266 |         int res_val;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(266,13): warning :       |             ^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(304,11): warning : unused variable ‘newServoCasiersVolt’ [-Wunused-variable]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(304,11): warning :   304 |     float newServoCasiersVolt = 12; //Nouvelle valeur � d�finir
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(304,11): warning :       |           ^~~~~~~~~~~~~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(415,60): warning : conversion from ‘std::vector<unsigned char>::size_type’ {aka ‘unsigned int’} to ‘std::vector<unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(415,60): warning :   415 |     frameToSend.push_back(HERKULEX_EEPROM_RAM_WRITE_LENGHT + data.size());
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(415,60): warning :       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(424,36): warning : conversion from ‘std::vector<unsigned char>::size_type’ {aka ‘unsigned int’} to ‘std::vector<unsigned char>::value_type’ {aka ‘unsigned char’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(424,36): warning :   424 |     frameToSend.push_back(data.size());
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(424,36): warning :       |                           ~~~~~~~~~^~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(706,55): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(706,55): warning :   706 |         voltage = (static_cast<float>(response.at(0)) * 0.074);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(706,55): warning :       |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(787,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(787,67): warning :   787 |     float minDegree = (this->minPosition - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(787,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(788,67): warning : conversion from ‘double’ to ‘float’ may change value [-Wfloat-conversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(788,67): warning :   788 |     float maxDegree = (this->maxPosition - HERKULEX_MID_POSITION) * 0.325;
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(788,67): warning :       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(796,30): warning : conversion from ‘int’ to ‘uint16_t’ {aka ‘short unsigned int’} may change value [-Wconversion]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(796,30): warning :   796 |     return this->fixPosition(position, playtime);
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(796,30): warning :       |                              ^~~~~~~~
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(63,1): warning : control reaches end of non-void function [-Wreturn-type]
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(63,1): warning :    63 | }
+C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\fichiers\servo_class.cpp(63,1): warning :       | ^
+  Liaison des objets
+  app_servo.vcxproj -> C:\Users\pinaliew\Documents\BTS_CIEL_2\_PROJET\app_servo\bin\ARM64\Debug\app_servo.out

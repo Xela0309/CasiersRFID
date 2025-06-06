@@ -1,0 +1,1 @@
+g++ -o "/home/rfid/projects/app_servo/bin/ARM64/Debug/app_servo.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/rfid/projects/app_servo/obj/ARM64/Debug/main.o /home/rfid/projects/app_servo/obj/ARM64/Debug/serialib.o /home/rfid/projects/app_servo/obj/ARM64/Debug/servo_class.o
