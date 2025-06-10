@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
+using System.Windows.Forms;
 
 namespace AppCasier
 {
@@ -25,10 +26,20 @@ namespace AppCasier
         
         public void OpenPort()
         {
-            m_SPort.Open();
+            // Vérifier si le port est déjà ouvert
+            if (!m_SPort.IsOpen)
+            {
+                m_SPort.Open();
+            }
+            
         }
         public void ClosePort()
         {
+            // Vérifier si le port est ouvert avant de le fermer
+            if (!m_SPort.IsOpen)
+            {
+                return; // Ne rien faire si le port n'est pas ouvert
+            }
             m_SPort.DataReceived -= eventDeLecture; // Détacher l'événement de lecture
             m_SPort.Dispose(); // Libérer les ressources du port série
             m_SPort.Close();
@@ -36,9 +47,10 @@ namespace AppCasier
 
         private void eventDeLecture(object sender, SerialDataReceivedEventArgs e)
         {
-            Task.Delay(2000).Wait(); // Attendre 2
+            OpenPort();
+            Task.Delay(1000).Wait(); // Attendre 2
             m_data = m_SPort.ReadExisting();
-
+            // Afficher la variable m_SPort.DataReceived pour débogage
             if (m_data.Length == 14)
             {
                 m_tag = ""; // Réinitialiser le tag
@@ -56,13 +68,16 @@ namespace AppCasier
 
         public void SetTag(string tag)
         {
-            m_tag = tag;
+            m_tag = tag; 
         }
         public bool lireTag()
         {
+            
             int time = 0;
+            
             while (m_tag == "")
             {
+                //Verifier si l'exeption est levée
                 m_SPort.DataReceived += eventDeLecture;
                 Task.Delay(50).Wait(); // Attendre 50ms
                 time += 50;
@@ -79,8 +94,7 @@ namespace AppCasier
         {
             try
             {
-                m_SPort.Open();
-                m_SPort.Close();
+                OpenPort(); // Ouvrir le port série
                 return true;
             }
             catch (Exception ex)

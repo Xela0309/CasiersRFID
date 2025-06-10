@@ -283,6 +283,7 @@
             this.Controls.Add(this.btInfoAffectationFermer);
             this.Name = "PageAffichageInterface";
             this.Text = "Information";
+            this.Load += new System.EventHandler(this.PageAffichageInterface_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

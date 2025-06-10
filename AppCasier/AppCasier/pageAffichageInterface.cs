@@ -71,5 +71,10 @@ namespace AppCasier
                 MessageBox.Show("Erreur lors de la mise à jour du tag.");
             }
         }
+
+        private void PageAffichageInterface_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

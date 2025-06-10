@@ -22,7 +22,7 @@ namespace AppCasier
             db.OpenConnection();
             lecteur = m_lecteur; // Récupérer l'instance de Lecteur
             mainform = form; // Récupérer l'instance de MainForm
-
+            
         }
 
         private void btAjoutTag_Click(object sender, EventArgs e)
@@ -48,6 +48,7 @@ namespace AppCasier
                         MessageBox.Show("Tag ajouté avec succès.");
                         this.Close(); // Fermer la fenêtre après l'ajout
                         mainform.Maj_Affichage();
+                        lecteur.ClosePort(); // Fermer le port du lecteur
                     }
                     else
                     {

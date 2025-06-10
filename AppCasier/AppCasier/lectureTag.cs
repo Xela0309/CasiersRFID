@@ -20,6 +20,7 @@ namespace AppCasier
             InitializeComponent();
             m_lecteur = lecteur;
 
+
         }
 
         private void lectureTagValide(object sender, EventArgs e)
@@ -36,10 +37,9 @@ namespace AppCasier
                 {
                     lbTag.Text = m_lecteur.GetTag(); // Afficher le tag lu dans le TextBox
                     lbConfirmation.Visible = true; // Afficher le picto de tag
+                    
                 }
             }
-
         }
-
     }
 }
