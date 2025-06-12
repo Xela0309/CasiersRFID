@@ -82,7 +82,7 @@
             this.Controls.Add(this.btSelectTag);
             this.Controls.Add(this.lbTitre);
             this.Name = "PageAjoutTag";
-            this.Text = "PageAjoutTag";
+            this.Text = "Ajout de tag";
             this.ResumeLayout(false);
             this.PerformLayout();
 

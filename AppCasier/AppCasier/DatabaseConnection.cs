@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using MySqlConnector; // Assurez-vous d'importer cette bibliothèque
+using ZstdSharp.Unsafe;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 //d2c72a3e81
@@ -10,8 +11,10 @@ namespace AppCasier
 {
     internal class DatabaseConnection
     {
-        private MySqlConnection connection;
+        private MySqlConnection connection ;
 
+        private int nbAffectation ;
+         
         private ChiffrageXOR chiffrage = new ChiffrageXOR("ChiffrementXORApplication"); // Chiffrement du mot de passe
 
         // Chaîne de connexion pour MySQL/MariaDB
@@ -779,6 +782,32 @@ namespace AppCasier
                 MessageBox.Show("Erreur lors de la mise à jour du tag : " + ex.Message);
                 return false;
             }
+        }
+
+        public int ComptageAffectations()
+        {
+            try
+            {
+                string requete = "SELECT COUNT(*) FROM Affectation";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du comptage des affectations : " + ex.Message);
+                return -1;
+            }
+
+        }
+
+        public int GetNbAffectation()
+        {
+            return nbAffectation;
+        }
+
+        public void SetNbAffectation(int nb)
+        {
+            nbAffectation = nb;
         }
     }
 }

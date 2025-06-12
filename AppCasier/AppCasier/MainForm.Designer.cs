@@ -124,9 +124,9 @@ namespace AppCasier
             this.lbAffectation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAffectation.Location = new System.Drawing.Point(11, 16);
             this.lbAffectation.Name = "lbAffectation";
-            this.lbAffectation.Size = new System.Drawing.Size(318, 13);
+            this.lbAffectation.Size = new System.Drawing.Size(214, 13);
             this.lbAffectation.TabIndex = 11;
-            this.lbAffectation.Text = "Selectionnez les éléments à ajouter dans l\'affectation :";
+            this.lbAffectation.Text = "Selectionnez les éléments à utiliser :";
             this.lbAffectation.Click += new System.EventHandler(this.FermetureMenuHamburger);
             // 
             // btAffectation
@@ -157,17 +157,17 @@ namespace AppCasier
             // 
             this.lbListeAffectation.AutoSize = true;
             this.lbListeAffectation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListeAffectation.Location = new System.Drawing.Point(21, 96);
+            this.lbListeAffectation.Location = new System.Drawing.Point(75, 19);
             this.lbListeAffectation.Name = "lbListeAffectation";
-            this.lbListeAffectation.Size = new System.Drawing.Size(273, 13);
+            this.lbListeAffectation.Size = new System.Drawing.Size(162, 13);
             this.lbListeAffectation.TabIndex = 10;
-            this.lbListeAffectation.Text = "Liste des casiers occupé par une Affecttation :";
+            this.lbListeAffectation.Text = "Liste des casiers occupés :";
             this.lbListeAffectation.Click += new System.EventHandler(this.FermetureMenuHamburger);
             // 
             // listBoxAffectation
             // 
             this.listBoxAffectation.FormattingEnabled = true;
-            this.listBoxAffectation.Location = new System.Drawing.Point(300, 47);
+            this.listBoxAffectation.Location = new System.Drawing.Point(287, 35);
             this.listBoxAffectation.Name = "listBoxAffectation";
             this.listBoxAffectation.Size = new System.Drawing.Size(119, 121);
             this.listBoxAffectation.TabIndex = 9;
@@ -194,7 +194,7 @@ namespace AppCasier
             this.Controls.Add(this.listBoxAffectation);
             this.Controls.Add(this.gpbAffectation);
             this.Name = "MainForm";
-            this.Text = "AppCasier";
+            this.Text = "Casiers Connectés";
             this.Click += new System.EventHandler(this.FermetureMenuHamburger);
             this.gpbAffectation.ResumeLayout(false);
             this.gpbAffectation.PerformLayout();

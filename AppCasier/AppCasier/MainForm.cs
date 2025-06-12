@@ -13,6 +13,7 @@ namespace AppCasier
         private string role = ""; // Variable conservée
         DatabaseConnection db = new DatabaseConnection(); // Instance de la classe DatabaseConnection
         MenuHamburger menu = new MenuHamburger(); // Instance de la classe Menu
+        private Timer actualisationTimer = new Timer();
 
         public MainForm()
         {
@@ -37,11 +38,20 @@ namespace AppCasier
             InitializeComponent();
             afficherAffectation(); // Afficher les affectations
             affichageSelection();
+            affichageMenu(); // Afficher le menu
+            affichageDatePasser();
+            // Initialisation du timer pour l'actualisation automatique
+            actualisationTimer.Interval = 100; // 1000 millisecondes = 1 seconde
+            actualisationTimer.Tick += (sender, e) => Actualisation_Modif(); // Appelle la méthode à chaque tick
+            actualisationTimer.Start(); // Démarre le timer
+        }
+
+        public void affichageMenu()
+        {
             menu.InitializeHamburgerMenu(this); // Initialiser le menu
             menu.SetMainForm(this); // Mettre à jour le formulaire principal
-            affichageDatePasser();
-
         }
+
         private void OpenConnexion()
         {
             Connexion connexion = new Connexion(this);
@@ -107,7 +117,7 @@ namespace AppCasier
             string[] detailsAffectation = db.detailsAffectation(selectedAffectation);
 
             // Afficher les détails de l'affectation
-            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation,this);
+            PageAffichageInterface pageAffichage = new PageAffichageInterface(detailsAffectation, this);
             pageAffichage.ShowDialog();
 
         }
@@ -144,6 +154,10 @@ namespace AppCasier
                 cbAffectationTag.Items.Add(Tag[i]);
             }
 
+            // Mettre la date de fin a aujourd'hui + 1 jour
+            dtpDateFin.Value = DateTime.Now.AddDays(1); // Mettre la date de fin à demain
+
+
         }
 
         private void btAffectation_Click(object sender, EventArgs e)
@@ -152,16 +166,17 @@ namespace AppCasier
             if (cbAffectationTag.SelectedItem == null || cbAffectationNom.SelectedItem == null || cbAffectationCasier.SelectedItem == null)
             {
                 MessageBox.Show("Veuillez remplir tous les champs !");
+                // Afficher un MessageBox pour afficher ce qu'il y a dans les champs
+                MessageBox.Show("Tag: " + cbAffectationTag.Text + "\nNom: " + cbAffectationNom.Text + "\nCasier: " + cbAffectationCasier.Text + "\nDate de début: " + dtpDateDeb.Value.ToString("yyyy-MM-dd") + "\nDate de fin: " + dtpDateFin.Value.ToString("yyyy-MM-dd"));
                 return;
             }
             else
             {
-                if (dtpDateDeb.Value >= dtpDateFin.Value)
+                if (dtpDateDeb.Value >= dtpDateFin.Value || dtpDateDeb.Value == dtpDateFin.Value )
                 {
-                    MessageBox.Show("La date de début doit être inférieure à la date de fin !");
+                    MessageBox.Show("Les dates ne sont pas valides !");
                     return;
                 }
-
                 else
                 {
                     if (dtpDateDeb.Value < DateTime.Now)
@@ -177,7 +192,7 @@ namespace AppCasier
                         string dateFin = dtpDateFin.Value.ToString("yyyy-MM-dd");
 
                         // Ajouter l'affectation
-                        if (db.ajouterAffectation(tag, nom,prenom, casier, dateDeb, dateFin))
+                        if (db.ajouterAffectation(tag, nom, prenom, casier, dateDeb, dateFin))
                         {
                             MessageBox.Show("Affectation ajoutée !");
                             // Mettre à jour l'affichage
@@ -189,10 +204,10 @@ namespace AppCasier
                             MessageBox.Show("Erreur lors de l'ajout de l'affectation !");
                         }
                     }
-		    else 
-		    {
-			MessageBox.Show("La date de début doit être celle d'aujourd'hui");
-		    }
+                    else
+                    {
+                        MessageBox.Show("La date de début doit être celle d'aujourd'hui");
+                    }
                 }
             }
         }
@@ -229,6 +244,18 @@ namespace AppCasier
                 // Afficher les informations de l'affectation
                 verifDate verifDate = new verifDate(detailsAffectation, this);
                 verifDate.ShowDialog();
+
+            }
+        }
+
+        private void Actualisation_Modif()
+        {
+            // Actualise l'affichage les affectation a chaque fois que l'on modifie une affectation dans la table
+            if (db.GetNbAffectation() != db.ComptageAffectations())
+            {
+                db.SetNbAffectation(db.ComptageAffectations());
+                afficherAffectation();
+                affichageSelection();
 
             }
         }

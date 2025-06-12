@@ -282,7 +282,7 @@
             this.Controls.Add(this.btInfoAffectationFermer);
             this.Controls.Add(this.label1);
             this.Name = "verifDate";
-            this.Text = "verifDate";
+            this.Text = "Verification des dates";
             this.ResumeLayout(false);
             this.PerformLayout();
 

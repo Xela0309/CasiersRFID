@@ -37,7 +37,6 @@ namespace AppCasier
                 {
                     lbTag.Text = m_lecteur.GetTag(); // Afficher le tag lu dans le TextBox
                     lbConfirmation.Visible = true; // Afficher le picto de tag
-                    
                 }
             }
         }

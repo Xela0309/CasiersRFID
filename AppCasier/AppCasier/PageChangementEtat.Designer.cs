@@ -94,7 +94,7 @@
             this.Controls.Add(this.lbTitre);
             this.Controls.Add(this.btChange);
             this.Name = "PageChangementEtat";
-            this.Text = "PageChangementEtat";
+            this.Text = "Modification d\'état";
             this.ResumeLayout(false);
             this.PerformLayout();
 

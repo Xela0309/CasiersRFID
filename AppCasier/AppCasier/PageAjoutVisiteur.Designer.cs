@@ -194,7 +194,7 @@
             this.Controls.Add(this.lbPrenom);
             this.Controls.Add(this.lbTitre);
             this.Name = "PageAjoutVisiteur";
-            this.Text = "PageAjoutVisiteur";
+            this.Text = "Ajout de Visiteur";
             ((System.ComponentModel.ISupportInitialize)(this.pbPays)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

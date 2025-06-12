@@ -14,11 +14,11 @@ namespace AppCasier
         public Timer menuTimer;
         private Panel menuPanel;
 
-        string[] menuItemsAdmin = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajout Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag","Changement d'état" };
-        string[] menuItemsUser = { "Ajouter Visiteur", "Ajout Tag", "Supprimer Visiteur", "Supprimer Tag", "PageChangementEtat" };
+        string[] menuItemsAdmin = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajouter un Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag","Changement d'état" };
+        string[] menuItemsUser = { "Ajouter Visiteur", "Ajouter un Tag", "Supprimer Visiteur", "Supprimer Tag", "PageChangementEtat" };
 
         MainForm mainform;
-        Lecteur lecteur = new Lecteur("COM8", 9600); // Port et vitesse de communication0
+        Lecteur lecteur = new Lecteur("COM8", 9600); // Port a modifier selon le lecteur de carte utilisé
 
         public MenuHamburger()
         {
@@ -129,7 +129,7 @@ namespace AppCasier
                 PageAjoutVisiteur page = new PageAjoutVisiteur(mainform);
                 page.ShowDialog();
             }
-            else if (menuItem == "Ajout Tag")
+            else if (menuItem == "Ajouter un Tag")
             {
                 // Ouvrir la page d'ajout de tag
                 // Vérifier si le lecteur est connecté

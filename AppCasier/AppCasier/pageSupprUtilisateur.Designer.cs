@@ -80,7 +80,7 @@
             this.Controls.Add(this.lbTitre);
             this.Controls.Add(this.btSuppr);
             this.Name = "pageSupprUtilisateur";
-            this.Text = "pageSupprUtilisateur";
+            this.Text = "Suppression d\'utilisateur";
             this.ResumeLayout(false);
             this.PerformLayout();
 

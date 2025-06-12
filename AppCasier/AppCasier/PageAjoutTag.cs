@@ -48,7 +48,6 @@ namespace AppCasier
                         MessageBox.Show("Tag ajouté avec succès.");
                         this.Close(); // Fermer la fenêtre après l'ajout
                         mainform.Maj_Affichage();
-                        lecteur.ClosePort(); // Fermer le port du lecteur
                     }
                     else
                     {

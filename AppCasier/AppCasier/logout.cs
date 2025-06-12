@@ -40,7 +40,7 @@ namespace AppCasier
             Connexion connexion = new Connexion(mainform);
             connexion.ShowDialog();
             this.Close();
-            mainform.affichageGeneral();
+            mainform.affichageMenu();
         }
     }
 }

@@ -80,7 +80,7 @@
             this.Controls.Add(this.lbTitre);
             this.Controls.Add(this.btSuppr);
             this.Name = "pageSupprTag";
-            this.Text = "pageSupprTag";
+            this.Text = "Suppression de tag";
             this.ResumeLayout(false);
             this.PerformLayout();
 
