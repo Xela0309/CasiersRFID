@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace AppCasier
@@ -194,6 +195,8 @@ namespace AppCasier
                         // Ajouter l'affectation
                         if (db.ajouterAffectation(tag, nom, prenom, casier, dateDeb, dateFin))
                         {
+                            string nomP = nom + " " + prenom; // Concaténer le nom et le prénom
+                            logAffectation(nomP, casier, tag, dateDeb, dateFin);
                             MessageBox.Show("Affectation ajoutée !");
                             // Mettre à jour l'affichage
                             afficherAffectation();
@@ -258,6 +261,22 @@ namespace AppCasier
                 affichageSelection();
 
             }
+        }
+
+        private void logAffectation(string Nom, string Casier, string Tag, string DateDeb, string DateFin)
+        {
+            string chemin = "Affectation.txt";
+            File.AppendAllText(
+                chemin, "Utilisateur connecté : " + login + " à " + DateTime.Now + "\n" +
+                "Affectation ajoutée :\n" +
+                "Nom : " + Nom + "\n" +
+                "Casier : " + Casier + "\n" +
+                "Tag : " + Tag + "\n" +
+                "Date de début : " + DateDeb + "\n" +
+                "Date de fin : " + DateFin + "\n" +
+                "----------------------------------------\n\n"
+                );
+
         }
     }
 }

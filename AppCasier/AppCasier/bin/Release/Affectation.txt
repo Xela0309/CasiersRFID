@@ -1,0 +1,36 @@
+Utilisateur connecté : admin à 13/06/2025 12:16:12
+Affectation ajoutée :
+Nom : Guerbaa Titouan
+Casier : 2
+Tag : 2600B326FE4D
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 12:17:24
+Affectation ajoutée :
+Nom : Borderie Lucas
+Casier : 1
+Tag : 2600B438C16B
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : antoine à 13/06/2025 12:18:35
+Affectation ajoutée :
+Nom : Guerbaa Titouan
+Casier : 2
+Tag : 2600B326FE4D
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : antoine à 13/06/2025 12:18:43
+Affectation ajoutée :
+Nom : Borderie Lucas
+Casier : 1
+Tag : 2600B438C16B
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
