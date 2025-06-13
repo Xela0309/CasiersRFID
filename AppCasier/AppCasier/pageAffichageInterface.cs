@@ -22,6 +22,7 @@ namespace AppCasier
             InitializeComponent();
             AffichageInfo(detailsAffectation);
             mainForm = form;
+            db.OpenConnection();
 
         }
 
@@ -35,8 +36,6 @@ namespace AppCasier
             // Recuperer les informations de l'affectation
             string casier = lbAffectationCasierINFO.Text;
 
-
-            db.OpenConnection();
             db.supprimerAffectation(casier);
             this.Close();
 

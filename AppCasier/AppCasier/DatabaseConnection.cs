@@ -18,9 +18,9 @@ namespace AppCasier
         private ChiffrageXOR chiffrage = new ChiffrageXOR("ChiffrementXORApplication"); // Chiffrement du mot de passe
 
         // Chaîne de connexion pour MySQL/MariaDB
-        private string connectionString = "server=10.187.52.4;userid=casier;password=casier;database=casier_b;";
+        //private string connectionString = "server=10.187.52.4;userid=casier;password=casier;database=casier_b;";
         //private string connectionString = "server=10.187.52.123;userid=casier;password=casier;database=m_Casier;";
-        //private string connectionString = "server=10.187.52.123;userid=casier;password=casier;database=m_Casier;";
+        private string connectionString = "server=192.168.2.2;userid=casier;password=casier;database=m_Casier;";
 
 
         public DatabaseConnection()

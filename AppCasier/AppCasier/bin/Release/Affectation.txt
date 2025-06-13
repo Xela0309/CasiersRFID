@@ -34,3 +34,129 @@ Date de début : 2025-06-13
 Date de fin : 2025-06-14
 ----------------------------------------
 
+Utilisateur connecté : admin à 13/06/2025 13:35:52
+Affectation ajoutée :
+Nom : Pinalie William
+Casier : 1
+Tag : 010C2E14093E
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 13:36:03
+Affectation ajoutée :
+Nom : Canin Antoine
+Casier : 2
+Tag : 2600B326FE4D
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 13:59:43
+Affectation ajoutée :
+Nom : Guerbaa Titouan
+Casier : 3
+Tag : 2600B438C16B
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 13:59:56
+Affectation ajoutée :
+Nom : Borderie Lucas
+Casier : 4
+Tag : 2600B43EFF53
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:23:50
+Affectation ajoutée :
+Nom : Canin Antoine
+Casier : 1
+Tag : 2600B326FE4D
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:24:00
+Affectation ajoutée :
+Nom : Pinalie William
+Casier : 2
+Tag : 2600B3271BA9
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:24:09
+Affectation ajoutée :
+Nom : Guerbaa Titouan
+Casier : 3
+Tag : 2600B43EFF53
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:24:18
+Affectation ajoutée :
+Nom : Borderie Lucas
+Casier : 4
+Tag : 2600B438C16B
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:39:14
+Affectation ajoutée :
+Nom : Dameme Marc
+Casier : 4
+Tag : 2600B438C16B
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:42:08
+Affectation ajoutée :
+Nom : Borderie Lucas
+Casier : 3
+Tag : 010C2E14093E
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 14:45:47
+Affectation ajoutée :
+Nom : Borie Romain
+Casier : 3
+Tag : 2600B43EFF53
+Date de début : 2025-06-13
+Date de fin : 2027-05-08
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 15:00:34
+Affectation ajoutée :
+Nom : Guerbaa Titouan
+Casier : 2
+Tag : 2600B3271BA9
+Date de début : 2025-06-13
+Date de fin : 2025-06-13
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 15:23:16
+Affectation ajoutée :
+Nom : Dameme Marc
+Casier : 3
+Tag : 2600B438C16B
+Date de début : 2025-06-13
+Date de fin : 2025-06-14
+----------------------------------------
+
+Utilisateur connecté : admin à 13/06/2025 15:23:30
+Affectation ajoutée :
+Nom : Pinalie William
+Casier : 1
+Tag : 2600B43EFF53
+Date de début : 2025-06-13
+Date de fin : 2025-06-13
+----------------------------------------
+

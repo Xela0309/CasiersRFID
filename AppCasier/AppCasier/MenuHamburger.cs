@@ -15,10 +15,10 @@ namespace AppCasier
         private Panel menuPanel;
 
         string[] menuItemsAdmin = { "Ajouter Utilisateur", "Ajouter Visiteur", "Ajouter un Tag", "Supprimer Utilisateur", "Supprimer Visiteur", "Supprimer Tag","Changement d'état" };
-        string[] menuItemsUser = { "Ajouter Visiteur", "Ajouter un Tag", "Supprimer Visiteur", "Supprimer Tag", "PageChangementEtat" };
+        string[] menuItemsUser = { "Ajouter Visiteur", "Ajouter un Tag", "Supprimer Visiteur", "Supprimer Tag", "Changement d'état" };
 
         MainForm mainform;
-        Lecteur lecteur = new Lecteur("COM8", 9600); // Port a modifier selon le lecteur de carte utilisé
+        Lecteur lecteur = new Lecteur("COM4", 9600); // Port a modifier selon le lecteur de carte utilisé
 
         public MenuHamburger()
         {
