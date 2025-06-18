@@ -1,0 +1,98 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\section{Objectifs et contraintes}
+
+\subsection{Les objectifs techniques}
+
+\quad Le projet Casiers RFID Motorisés repose sur plusieurs défis techniques visant à garantir son efficacité, sa fiabilité et sa simplicité d’utilisation. Les principaux objectifs techniques sont les suivants :
+
+\begin{enumerate}
+
+	\item Automatisation de l’ouverture des casiers :
+	\begin{itemize}
+		\item Intégration de servomoteurs intelligents pour l’ouverture et la fermeture des casiers
+		\item Indication visuelle avec des diodes RGB pour signaler le casier concerné
+	\end{itemize}
+	\item Gestion des identifiants par RFID :
+	\begin{itemize}
+		\item Utilisation de badges RFID UM4100 à 125 kHz pour identifier les chauffeurs
+		\item Développement d’une application Windows permettant l’enregistrement et la lecture des badges
+	\end{itemize}
+	\item Base de données et traçabilité :
+	\begin{itemize}
+		\item Conception d’une base de données SQL hébergée sur une machine virtuelle sous Proxmox
+		\item Enregistrement des mouvements des chauffeurs pour une exploitation statistique ultérieure
+	\end{itemize}
+	\item Sécurisation et communication réseau :
+	\begin{itemize}
+		\item Intégration d’un pare-feu logiciel (IPFire) pour protéger le système
+		\item Utilisation du réseau Ethernet interne de l’usine pour la synchronisation des données
+	\end{itemize}
+	
+\end{enumerate}
+
+L’ensemble de ces aspects doit être intégré de manière cohérente et optimisée, afin de garantir un fonctionnement fiable, rapide et sécurisé du système.
+
+
+\subsection{Les objectifs économiques}
+
+\quad Le projet étant développé pour l’entreprise Sylvamo dans le cadre d’une optimisation des flux logistiques, il doit répondre à plusieurs contraintes économiques :
+
+\begin{enumerate}
+
+	\item Réduction des coûts de gestion des entrées et sorties :
+	\begin{itemize}
+		\item Diminution du temps passé par les agents de sécurité sur la gestion des documents
+		\item Fluidification du trafic pour éviter des pertes de temps coûteuses pour les transporteurs
+	\end{itemize}
+	\item Coût maîtrisé du matériel :
+	\begin{itemize}
+		\item Budget alloué de 1000 € pour l’ensemble du projet
+		\item Utilisation de composants économiques et faciles à approvisionner (Raspberry Pi, servomoteurs abordables, badges RFID standards)
+	\end{itemize}
+	\item Durabilité et maintenance minimale :
+	\begin{itemize}
+		\item Choix de matériaux et composants garantissant une longue durée de vie
+		\item Minimisation des interventions humaines pour réduire les coûts de maintenance
+	\end{itemize}
+
+\end{enumerate}
+
+Le système doit donc être rentable sur le long terme en améliorant l’efficacité du processus sans engendrer des coûts excessifs.
+
+\newpage
+
+\subsection{Les délais}
+
+\quad Le projet s’inscrit dans un planning strict qui doit être respecté pour assurer sa finalisation dans le cadre du BTS CIEL. Voici les principales échéances :
+
+\begin{itemize}
+
+	\item Janvier 2025 : Lancement du projet et début de l’analyse des besoins
+	\item Février - Mars 2025 :
+	\begin{itemize}
+		\item Conception et modélisation (diagrammes UML, architecture du système)
+		\item Développement de la base de données et des premières fonctionnalités logicielles
+	\end{itemize}
+	\item Avril 2025 :
+	\begin{itemize}
+		\item Assemblage du prototype physique et intégration des composants électroniques
+		\item Tests unitaires des différentes fonctionnalités
+	\end{itemize}
+	\item Mai 2025 :
+	\begin{itemize}
+		\item Finalisation du projet et tests en condition réelle
+		\item Rédaction du rapport et préparation de la soutenance
+	\end{itemize}
+	\item Juin 2025 
+	\begin{itemize}
+		\item Présentation du projet
+	\end{itemize}
+	
+\end{itemize}
+
+\newpage
+
+\end{document}

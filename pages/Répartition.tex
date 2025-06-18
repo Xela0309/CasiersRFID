@@ -1,0 +1,201 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\section{Répartition des tâches et des technologies}
+
+\subsection{Répartition des tâches}
+
+\quad Le projet Casiers RFID Motorisés repose sur plusieurs sous-systèmes interconnectés nécessitant une répartition efficace des tâches entre les membres de l’équipe. Chaque étudiant est responsable d’un aspect spécifique du projet, tout en assurant une coordination avec les autres pour garantir une intégration fluide et fonctionnelle.
+
+Étudiant 1 = Alexandre Picard \\
+Étudiant 2 = Antoine Canin \\
+Étudiant 3 = William Pinalie
+
+Répartition des tâches par sous-système :
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{4.2cm}|p{3.2cm}|p{7.2cm}|}
+\hline
+\textbf{Sous-système} & \textbf{Étudiant(s)} & \textbf{Tâches} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Sous-système} & \textbf{Étudiant(s)} & \textbf{Tâches} \\
+\hline
+\endhead
+
+Sous-système général & Étudiant 1 & 
+- Développement de l’interface graphique sous Windows.\\
+& & - Intégration de la lecture des badges RFID.\\
+& & - Communication avec la base de données SQL. \\
+\hline
+
+CRM.AppWindows (Application de gestion) & Étudiant 1 & 
+- Conception du Modèle Conceptuel de Données (MCD). \\
+& & - Déploiement de la base SQL sous une raspberry avec MariaDB.\\
+& & - Gestion des requêtes et stockage des données. \\
+\hline
+
+CRM.BDD (Base de données) & Étudiant 1 \& Étudiant 2 & 
+- Conception du Modèle Conceptuel de Données (MCD).\\
+& & - Déploiement de la base SQL sur une machine virtuelle Debian.\\
+& & - Gestion des requêtes et stockage des données.\\
+\hline
+
+CRM.Capteurs (Lecture RFID) & Étudiant 2 & 
+- Intégration des lecteurs RFID (USB et série).\\
+& & - Développement des modules de communication avec l’application.\\
+& & - Transmission des identifiants RFID à la base de données.\\
+\hline
+
+CRM.Actionneurs (Contrôle des casiers) & Étudiant 3 & 
+- Intégration des servomoteurs pour l’ouverture des casiers.\\
+& & - Gestion des diodes RGB pour l’indication des casiers actifs.\\
+& & - Développement des classes de commande des actionneurs en C\texttt{++}.\\
+\hline \
+
+CRM.InfrastructureRéseau (Sécurité \& communication) & Tous les étudiants & 
+- Installation et configuration du pare-feu IPFire. \\
+& & - Paramétrage du réseau interne et des adresses IP.\\
+& & - Sécurisation des échanges entre les composants du système.\\
+\hline
+
+Gestion de projet & Tous les étudiants & 
+- Suivi de l’avancement du projet.\\
+& & - Rédaction de la documentation technique.\\
+& & - Préparation de la soutenance finale.\\
+\hline
+
+\end{longtable}
+
+Organisation du travail
+
+Le développement se déroule en plusieurs phases :
+
+\begin{enumerate}
+
+	\item \textbf{Analyse et conception :} Études des besoins, modélisation UML, définition des composants matériels et logiciels
+	\item \textbf{Développement des sous-systèmes :} Programmation et tests unitaires de chaque module
+	\item \textbf{Intégration et validation :} Assemblage du système global et tests en condition réelle
+	\item \textbf{Finalisation et soutenance :} Rédaction du rapport et préparation de la présentation
+
+\end{enumerate}
+
+Un suivi hebdomadaire est mis en place pour assurer le bon déroulement du projet et ajuster la répartition des tâches en fonction des avancées et des éventuels obstacles techniques.
+
+
+
+\subsection{Répartitions des technologies}
+
+\quad Le projet Casiers RFID Motorisés repose sur plusieurs technologies matérielles et logicielles, chacune ayant un rôle précis dans le fonctionnement du système. Ces technologies sont réparties entre les différents sous-systèmes en fonction des besoins spécifiques du projet.
+
+Répartition des technologies par sous-système :
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{6pt}
+
+\begin{longtable}{|p{4.5cm}|p{5.5cm}|p{6cm}|}
+\hline
+\textbf{Sous-système} & \textbf{Technologies utilisées} & \textbf{Rôle} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Sous-système} & \textbf{Technologies utilisées} & \textbf{Rôle} \\
+\hline
+\endhead
+
+CRM.AppWindows (Application de gestion) & 
+\begin{itemize}
+  \item Langage C++/C\# (Visual Studio)
+  \item Windows 10
+  \item .NetSerial (gestion RFID série)
+\end{itemize} &
+\begin{itemize}
+  \item Développement de l’interface graphique.
+  \item Gestion des interactions avec les badges RFID.
+  \item Communication avec la base de données.
+\end{itemize} \\
+\hline
+
+CRM.BDD (Base de données) & 
+\begin{itemize}
+  \item SQL (Tests sur MySQL puis MariaDB)
+  \item PHPMyAdmin
+  \item Serveur sous Proxmox
+\end{itemize} &
+\begin{itemize}
+  \item Stockage et gestion des identifiants RFID.
+  \item Association badge/casier/chauffeur.
+  \item Historisation des entrées et sorties.
+\end{itemize} \\
+\hline
+
+CRM.Capteurs (Lecture RFID) & 
+\begin{itemize}
+  \item Lecteurs RFID UM4100 (125kHz)
+  \item Bibliothèque Serialib (C++)
+  \item Raspberry Pi
+\end{itemize} &
+\begin{itemize}
+  \item Lecture des badges RFID.
+  \item Envoi des identifiants à la base de données.
+\end{itemize} \\
+\hline
+
+CRM.Actionneurs (Contrôle des casiers) & 
+\begin{itemize}
+  \item Servomoteurs HerkuleX DRS0101
+  \item Diodes RGB WS2812
+  \item Bibliothèque de gestion des servomoteurs (C++)
+\end{itemize} &
+\begin{itemize}
+  \item Motorisation des casiers.
+  \item Signalisation visuelle des casiers à ouvrir.
+\end{itemize} \\
+\hline
+
+CRM.InfrastructureRéseau (Sécurité \& communication) & 
+\begin{itemize}
+  \item IPFire (pare-feu logiciel)
+  \item Réseau Ethernet d’entreprise
+\end{itemize} &
+\begin{itemize}
+  \item Sécurisation du système.
+  \item Communication entre les différents éléments.
+\end{itemize} \\
+\hline
+
+\end{longtable}
+
+Résumé des choix technologiques :
+
+\begin{enumerate}
+
+\item Langages de programmation :
+	\begin{itemize}
+	\item C++/C\# pour l’application Windows
+	\item SQL pour la base de données
+	\item C++ pour la gestion des capteurs et actionneurs
+	\end{itemize}
+\item Matériel principal :
+	\begin{itemize}
+	\item Raspberry Pi pour la gestion des capteurs, actionneurs et pour la base de données.
+	\item Mini PC sous Windows pour l’application de gestion
+	\item NUC XCY-Mini PC
+	\end{itemize}
+\item Réseau et sécurité :
+	\begin{itemize}
+	\item Connexion Ethernet pour la communication entre les éléments
+	\item IPFire pour protéger les échanges de données
+	\end{itemize}
+	
+\end{enumerate}
+
+Chaque technologie a été choisie en fonction de sa compatibilité, de sa robustesse et de sa facilité d’intégration dans l’environnement industriel de l’usine Sylvamo.
+
+\newpage
+
+\end{document}

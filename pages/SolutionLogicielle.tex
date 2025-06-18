@@ -1,0 +1,24 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\section{Les solutions logicielles}
+
+\subsection{L’application}
+
+\quad L’application sera interne au réseau de l’entreprise sur un poste local qui sera directement relié au NUC. Cette application sera en C\# et utilisera un lecteur RFID pour la lecture des cartes RFID. Elle sera constituée de différentes options comme la création de visiteur. Il y aura 2 types d’utilisateur ayant différents droits : les administrateurs et les utilisateurs.
+
+\subsection{Picocom}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{../images/picocom}
+	\caption{Logo Picocom}
+	\label{fig:NUC}
+\end{figure}
+
+\quad Avant de développer notre propre solution logicielle de lecture RFID en C++, nous avons utilisé l’outil Picocom pour effectuer des tests fonctionnels sur le lecteur RFID connecté à la Raspberry Pi. Picocom est un émulateur de terminal série en ligne de commande, ceci est très utile pour observer en temps réel les données transmises par un périphérique.L’objectif de cette étape est de vérifier le bon fonctionnement du lecteur RFID UEM4100 et de comprendre le format des trames envoyés lors de la lecture d’un badge. Grâce à Picocom nous avons pu identifier avec précision les séquences de caractères échangés sur le port série, sans développer de code au préalable
+
+\newpage
+
+\end{document}

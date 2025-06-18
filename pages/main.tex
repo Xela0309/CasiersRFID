@@ -1,0 +1,177 @@
+\documentclass[a4paper,12pt]{article}
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+
+% Language and encoding settings
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Set size and margins
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{mdframed}
+
+\definecolor{codebg}{rgb}{0.95,0.95,0.95}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage[export]{adjustbox}
+\usepackage{verbatim}
+\usepackage{parskip}
+% \usepackage{svg}
+\usepackage{pdfpages}
+\usepackage{array}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontawesome5} % Pour l'icône "copier"
+\usepackage[breakable, skins]{tcolorbox}
+\usepackage{lastpage}
+
+% Titling
+\usepackage{titling}
+  % \renewcommand\maketitlehooka{\null\vfill}
+  \renewcommand\maketitlehookb{\vfill\null}
+
+% Enable links
+% \usepackage{bookmark}
+%   \hypersetup{urlcolor=white}
+\usepackage[colorlinks=true,allcolors=black]{hyperref}
+  \hypersetup{urlcolor=red}
+
+% Code style
+\usepackage{xcolor}
+\usepackage{listings}
+  \definecolor{codegreen}{rgb}{0,0.6,0}
+  \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+  \definecolor{codepurple}{rgb}{0.58,0,0.82}
+  \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+  \lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+  }
+  \lstset{style=mystyle}
+
+% Multifiles
+%\usepackage[subpreambles=true]{standalone}
+%\usepackage{import}
+\usepackage{subfiles}
+
+% Paging
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[L]{}
+  \fancyhead[C]{Rapport de Projet }
+  \fancyhead[R]{2025}
+  \fancyfoot[L]{Page n°\thepage{} sur \pageref{LastPage}}
+  \fancyfoot[C]{}
+  \fancyfoot[R]{\leftmark}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+
+% Title
+\title{%
+  \begin{minipage}
+    \linewidth%
+    \centering\bfseries
+    \includegraphics[width=0.5\linewidth,valign=c]{../images/Lycee-Turgot.png}
+    \hskip50pt
+    \includegraphics[width=0.25\linewidth,valign=c]{../images/logo_BTS.png}\\[6ex]
+    \vskip140pt
+	\Large Rapport de Projet du groupe sur les casiers connectées 
+  \end{minipage}
+}
+\date{\today}
+\author{\bsc{Canin} Antoine, \bsc{Picard} Alexandre, \bsc{Pinalie} William}
+
+\begin{document}
+
+  % Title page
+  \begin{titlingpage}
+    \maketitle
+  \end{titlingpage}
+  \newpage
+
+  \subfile{Remerciements}
+  \newpage
+
+  % Table of contents page
+  \tableofcontents
+  \newpage
+  
+  % Pages (sections)
+  
+  % Page 1
+  \subfile{PresentationEntreprise}
+  \newpage
+  
+  % Page 2
+  \subfile{Besoins}
+  \newpage
+  
+  % Page 3
+  \subfile{ObjectifContrainte}
+  \newpage
+  
+  % Page 4
+  \subfile{GestionProjet}
+  \newpage
+  
+  % Page 5
+  \subfile{Répartition}
+  \newpage
+  
+  % Page 6
+  \subfile{SolutionMatérielle}
+  \newpage
+  
+  % Page 7
+  \subfile{SolutionLogicielle}
+  \newpage
+
+  % Page 8
+  \subfile{PartieCanin}
+  \newpage
+  
+  % Page 9
+  \subfile{PartiePicard}
+  \newpage
+  
+  % Page 10
+  \subfile{PartiePinalie}
+  \newpage
+  
+  % Page 11
+  \subfile{CoutProjet}
+  \newpage
+  
+  % Page 12
+  \subfile{BilanProjet}
+  \newpage
+  
+  % Page 13
+  \subfile{Annexes}
+  \newpage
+
+
+\end{document}
